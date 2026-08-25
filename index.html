@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CurioCITY playgrounds — visual preview</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet"><style>
+:root{--ink:#101317;--muted:#687282;--teal:#128083;--paper:#fffdf9;--mist:#f1f8f7}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--paper)}a{color:inherit;text-decoration:none}.header{height:82px;position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(22px,5vw,76px);background:#fffdf9ec;backdrop-filter:blur(15px);border-bottom:1px solid #1111}.brand{display:flex;align-items:center;gap:9px;font:800 25px/1 Outfit}.brand b{color:#ff4d8e}.brand small{display:block;font:800 9px Nunito Sans;letter-spacing:1.5px;color:#687282}.star{color:#f4a019;font-size:32px}.nav{display:flex;gap:clamp(18px,3vw,44px);align-items:center;font-weight:900}.nav a:hover{color:var(--teal)}.nav .contact{padding:12px 20px;border-radius:99px;background:var(--teal);color:white}.hero{min-height:720px;display:flex;align-items:center;padding:100px clamp(22px,8vw,132px);position:relative;color:white;background:linear-gradient(90deg,#081011ca,#08101166 58%,#08101112),url('assets/curiocity-hero-concept.png') center/cover}.copy{max-width:720px}.eyebrow{margin:0 0 15px;color:#fff1b4;font-size:11px;font-weight:900;letter-spacing:1.8px}.hero h1,.section h2,.detail h1,.detail h2{margin:0;font:800 clamp(43px,5.6vw,78px)/.97 Outfit;letter-spacing:-3px}.hero p:not(.eyebrow){max-width:610px;font-size:19px;line-height:1.55}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}.button{display:inline-flex;justify-content:center;padding:16px 25px;border-radius:99px;background:var(--teal);color:#fff;font-weight:900}.button.alt{border:1px solid #fff9;background:#ffffff20}.section{padding:110px clamp(22px,5vw,76px)}.head{max-width:800px;margin:0 auto 52px;text-align:center}.head .eyebrow,.detail .eyebrow{color:var(--teal)}.head p:last-child{color:var(--muted);font-size:19px}.grid{max-width:1510px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:23px}.card{overflow:hidden;border:1px solid #e6ebeb;border-radius:29px;background:#fff;box-shadow:0 8px 19px #1424330b;transition:.25s}.card:hover{transform:translateY(-9px);box-shadow:0 28px 42px #14243322}.photo{height:245px;position:relative;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.photo:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#15101572)}.body{min-height:292px;display:flex;flex-direction:column;padding:25px 26px}.mall{margin:0;color:var(--accent);font-weight:900}.body h3{margin:20px 0 10px;font:800 31px/1 Outfit;letter-spacing:-1.4px}.body>p:not(.mall){margin:0;color:var(--muted);line-height:1.45}.hours{width:max-content;max-width:100%;margin:20px 0;padding:7px 10px;border-radius:99px;background:#f0f4f4;color:#687282;font-size:12px;font-weight:800}.body .button{margin-top:auto;border-radius:16px}.coral{--accent:#fb7b5a}.sand{--accent:#b98232}.orange{--accent:#f7a108}.violet{--accent:#8959f5}.why{background:var(--mist)}.features{max-width:1510px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.feature{min-height:250px;padding:31px 25px;border-radius:30px;background:#fff;text-align:center}.icon{width:80px;height:80px;margin:auto auto 25px;display:grid;place-items:center;border-radius:24px;background:#e7f0ef;color:var(--teal);font-size:31px}.feature h3{margin:0;font:800 28px Outfit}.feature p{color:var(--muted)}.locations{max-width:1350px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.location{min-height:264px;padding:34px;border:1px solid #e4ecec;border-radius:31px}.pin{font-size:33px;color:var(--teal)}.location h3{margin:25px 0 10px;font:800 29px Outfit}.location strong,.location a{color:var(--teal)}.location p{color:var(--muted)}.location a{font-weight:900}.cta{padding:82px 22px;background:var(--teal);color:#fff;text-align:center}.cta h2{margin:0;font:800 clamp(42px,5vw,67px)/1 Outfit;letter-spacing:-2px}.cta .buttons{justify-content:center}.cta .button{background:#fff;color:var(--teal)}.cta .alt{background:#ffffff22;color:#fff}.footer{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:65px clamp(22px,5vw,76px);background:#0c0d0d;color:#bbb}.footer h4{color:#fff;font-size:12px}.footer a{display:block;margin:14px 0}.footer small{display:block;color:#777}.top{position:fixed;right:20px;bottom:20px;z-index:9;width:52px;height:52px;border:0;border-radius:50%;background:var(--teal);color:#fff;font-size:25px;box-shadow:0 9px 24px #0c464766;cursor:pointer}.detail{display:none}.detail.active{display:block}.detail .back{display:inline-block;margin:35px clamp(22px,8vw,132px) 0;color:var(--teal);font-weight:900}.detail-hero{padding:36px clamp(22px,8vw,132px) 95px;display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}.detail-hero p:not(.eyebrow),.about p{color:var(--muted);font-size:18px;line-height:1.6}.detail-photo{height:470px;overflow:hidden;border-radius:48px}.detail-photo img{width:100%;height:100%;object-fit:cover}.about{max-width:900px}.inside{background:#f7faf9}.inside-grid{max-width:1300px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.inside-grid article{min-height:200px;padding:24px;border-radius:24px;background:#fff}.inside-grid span{color:var(--accent);font-weight:900}.inside-grid h3{margin:35px 0 0;font:800 22px Outfit}.visit{max-width:1170px;margin:100px auto;padding:42px;display:grid;grid-template-columns:1fr 1fr;gap:42px;border:1px solid #e5eceb;border-radius:34px}.visit h2{font-size:40px}.visit h3{margin:0 0 16px;font:800 30px Outfit}.row{display:flex;justify-content:space-between;gap:20px;margin:9px 0;font-size:15px}.row span{font-weight:800}.visit p{color:var(--muted)}.pills{display:flex;gap:10px;flex-wrap:wrap}.pill{padding:7px 10px;border-radius:99px;background:#eef5f4;color:var(--teal);font-size:13px;font-weight:900}.detail-actions{padding:75px 22px;text-align:center;background:linear-gradient(125deg,var(--a),var(--b));color:#fff}.detail-actions h2{margin:0;font:800 50px Outfit}.detail-actions .button{background:#fff;color:var(--accent)}.detail-actions .alt{background:#ffffff28;color:#fff;border:1px solid #fff8}@media(max-width:1000px){.grid,.features,.inside-grid{grid-template-columns:repeat(2,1fr)}.detail-hero{grid-template-columns:1fr}.footer{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.nav{display:none}.hero{min-height:620px;padding:70px 24px}.section{padding:76px 24px}.grid,.features,.locations,.inside-grid,.visit{grid-template-columns:1fr}.detail-hero{padding:32px 24px 65px}.detail-photo{height:320px}.visit{margin:65px 24px;padding:28px}.footer{grid-template-columns:1fr}.hero h1,.section h2{letter-spacing:-2px}}
+</style></head><body><div id="home"><header class="header"><a class="brand" href="#home"><span class="star">✦</span><span>Curio<b>CITY</b><small>playgrounds · working name</small></span></a><nav class="nav"><a href="#home">Home</a><a href="#centers">Our Centers</a><a href="#locations">Locations</a><a class="contact" href="#contact">Contact Us</a></nav></header><section class="hero"><div class="copy"><p class="eyebrow">FAMILY ENTERTAINMENT · DOHA, QATAR</p><h1>Four Worlds of Play. One Place for Every Imagination.</h1><p>Discover four unique kids entertainment centers across Doha — each with its own world of fun, creativity and adventure.</p><div class="buttons"><a class="button" href="#centers">Explore Our Centers</a><a class="button alt" href="#locations">Find a Location</a></div></div></section><section id="centers" class="section"><div class="head"><p class="eyebrow">OUR CENTERS</p><h2>Choose your world of play</h2><p>Four unique destinations, each with its own personality.</p></div><div id="cards" class="grid"></div></section><section class="section why"><div class="head"><p class="eyebrow">WHY FAMILIES CHOOSE US</p><h2>Made for little moments that become big memories.</h2><p>Every visit is designed to spark joy, creativity and connection.</p></div><div class="features"><div class="feature"><div class="icon">✦</div><h3>7+ Years</h3><p>Bringing playful experiences to families in Doha.</p></div><div class="feature"><div class="icon">☀</div><h3>Play</h3><p>[Editable caption about play]</p></div><div class="feature"><div class="icon">◈</div><h3>Discovery</h3><p>[Editable caption about discovery]</p></div><div class="feature"><div class="icon">♡</div><h3>Family Time</h3><p>[Editable caption about family time]</p></div></div></section><section id="locations" class="section"><div class="head"><p class="eyebrow">LOCATIONS</p><h2>Find us across Doha</h2><p>Three malls, four destinations — always close to you.</p></div><div id="locations-grid" class="locations"></div></section><footer id="contact"><section class="cta"><h2>Ready to Plan Your Visit?</h2><div class="buttons"><a class="button" href="#centers">Explore Centers</a><a class="button alt" target="_blank" href="https://www.instagram.com/curiocitydoha/">Contact Us</a></div></section><div class="footer"><div><a class="brand" href="#home" style="color:white"><span class="star">✦</span><span>Curio<b>CITY</b><small>playgrounds</small></span></a><p>Four distinct worlds of play for Doha families.</p></div><div><h4>OUR CENTERS</h4><a href="#center/imagination">Imagination Station<small>The Gate Mall</small></a><a href="#center/play">Center of Play<small>The Pearl</small></a><a href="#center/sandbox">Sandbox<small>The Gate Mall</small></a><a href="#center/satisfactory">Satisfactory<small>Lagoona Mall</small></a></div><div><h4>QUICK LINKS</h4><a href="#home">Home</a><a href="#centers">Our Centers</a><a href="#locations">Locations</a></div><div><h4>CONTACT & MEDIA</h4><a href="tel:+97477233233">+974 7723 3233</a><a target="_blank" href="https://www.instagram.com/curiocitydoha/">@curiocitydoha</a><a target="_blank" href="https://www.instagram.com/satisfactory.qa/">@satisfactory.qa</a></div></div></footer></div><div id="detail" class="detail"></div><button class="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button><script>
+const centers=[
+{id:'imagination',name:'Imagination Station',mall:'The Gate Mall',accent:'#fb7b5a',a:'#ff7659',b:'#ffc063',theme:'A colourful place for curious minds.',address:'First floor, The Gate Mall, Main Entrance, Doha',phone:'+974 7723 3233',hours:[['Daily','10 AM–10 PM']],ig:'https://www.instagram.com/curiocitydoha/',card:'assets/imagination-station-card.webp',hero:'assets/imagination-station-hero.webp'},
+{id:'play',name:'Center of Play',mall:'The Pearl',accent:'#b98232',a:'#f1cb6a',b:'#aa774b',theme:'Warm wood tones and soft-play energy.',address:'Pearl Qatar, Porto Arabia, 18 La Croisette, Doha',phone:'+974 7723 3233',hours:[['Sunday–Friday','1:30 PM–10 PM'],['Saturday','10 AM–10 PM']],ig:'https://www.instagram.com/curiocitydoha/',card:'assets/center-of-play-card.webp',hero:'assets/center-of-play-hero.webp',intro:'A hands-on learning center of play, with a gift shop and cozy coffee shop.',booking:'https://centerofplay.com/reservations.php'},
+{id:'sandbox',name:'Sandbox',mall:'The Gate Mall',accent:'#f7a108',a:'#ff9612',b:'#f34e38',theme:'Sand, making, construction and slime.',address:'The Gate Mall, Doha',phone:'+974 7723 3233',hours:[['Saturday–Thursday','10 AM–8 PM'],['Friday','2 PM–9 PM']],ig:'https://www.instagram.com/curiocitydoha/',card:'assets/sandbox-card.webp',hero:'assets/sandbox-hero.webp'},
+{id:'satisfactory',name:'Satisfactory',mall:'Lagoona Mall',accent:'#8959f5',a:'#9b64ff',b:'#5c45d9',theme:'A bold sensory world with its own future-facing energy.',address:'Lagoona Mall, Unit A-01, Ground Floor, Doha',phone:'+974 5123 5393',hours:[['Saturday–Thursday','10 AM–10 PM'],['Friday','2 PM–10 PM']],ig:'https://www.instagram.com/satisfactory.qa/',card:'assets/satisfactory-card.webp',hero:'assets/satisfactory-hero.webp'}];
+const map=a=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(a);const cards=document.querySelector('#cards');cards.innerHTML=centers.map(c=>`<article class="card" style="--accent:${c.accent}"><a href="#center/${c.id}"><div class="photo"><img src="${c.card}" alt="${c.name}"></div><div class="body"><p class="mall">⌖ ${c.mall}</p><h3>${c.name}</h3><p>${c.theme}</p><small class="hours">${c.hours.map(x=>x.join(': ')).join(' · ')}</small><span class="button">Explore Center →</span></div></a></article>`).join('');
+const locs=[['The Gate Mall','Imagination Station · Sandbox','First floor, Main Entrance, Doha'],['The Pearl','Center of Play','Porto Arabia, 18 La Croisette, Doha'],['Lagoona Mall','Satisfactory','Unit A-01, Ground Floor, Doha']];document.querySelector('#locations-grid').innerHTML=locs.map(x=>`<article class="location"><div class="pin">⌖</div><h3>${x[0]}</h3><strong>${x[1]}</strong><p>${x[2]}</p><a target="_blank" href="${map(x[2])}">Get Directions →</a></article>`).join('');
+function route(){let id=location.hash.split('/')[1];let c=centers.find(x=>x.id===id);document.querySelector('#home').style.display=c?'none':'block';let d=document.querySelector('#detail');if(!c){d.className='detail';return}d.className='detail active';d.style.cssText=`--accent:${c.accent};--a:${c.a};--b:${c.b}`;let schedule=c.hours.map(x=>`<div class="row"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('');d.innerHTML=`<header class="header"><a class="brand" href="#home"><span class="star">✦</span><span>Curio<b>CITY</b><small>playgrounds · working name</small></span></a><nav class="nav"><a href="#home">Back to Home</a><a href="#centers">Our Centers</a></nav></header><a class="back" href="#home">← Back to Home</a><section class="detail-hero"><div><p class="eyebrow">${c.mall.toUpperCase()} · DOHA, QATAR</p><h1>${c.name}</h1><p>${c.theme}<br><br>${c.intro||'[Short editable introduction for this center.]'}</p><a class="button" href="#visit">Plan a Visit →</a></div><div class="detail-photo"><img src="${c.hero}" alt="${c.name}"></div></section><section class="section about"><p class="eyebrow">ABOUT THE EXPERIENCE</p><h2>A place designed for play, curiosity and joyful connection.</h2><p>${c.intro||'[Editable text about the theme, atmosphere and purpose of this center.]'}</p></section><section class="section inside"><div class="head"><p class="eyebrow">WHAT'S INSIDE</p><h2>So much to explore.</h2><p>Placeholders ready for confirmed activities and descriptions.</p></div><div class="inside-grid">${['Experience one','Experience two','Experience three','Experience four'].map((x,i)=>`<article><span>0${i+1}</span><h3>[${x}]</h3><p>[Editable description]</p></article>`).join('')}</div></section><section id="visit" class="visit"><div><p class="eyebrow">BEST FOR</p><h2>[Recommended age]</h2><p>[Who it is for]</p></div><div><p class="eyebrow">VISIT INFORMATION</p><h3>Opening hours</h3>${schedule}<p>${c.address}</p><div class="pills"><a class="pill" target="_blank" href="${c.ig}">Instagram</a><a class="pill" target="_blank" href="https://apps.apple.com/qa/app/playfull-children-center-app/id6504391362">PlayFULL App</a></div><p><a style="color:var(--accent);font-weight:900" target="_blank" href="${map(c.address)}">Get Directions →</a></p></div></section><section class="detail-actions"><h2>Come play with us.</h2><div class="buttons" style="justify-content:center"><a class="button" target="_blank" href="${c.booking||c.ig}">Book / Reserve</a><a class="button alt" href="tel:${c.phone.replaceAll(' ','')}">Call Us</a></div></section>`}route();addEventListener('hashchange',route);
+</script><style>
+#home{position:relative;isolation:isolate;background:linear-gradient(#fffdf9d9,#fffdf9c7),url('assets/curiocity-ambient-background.png') center top/cover fixed}#home:before,#home:after{content:'';position:fixed;z-index:-1;width:43vw;height:43vw;border-radius:50%;filter:blur(76px);opacity:.23;pointer-events:none;animation:drift 15s ease-in-out infinite alternate}#home:before{top:17vh;left:-18vw;background:#76d5cf}#home:after{right:-19vw;bottom:8vh;background:#ff9d75;animation-delay:-7s}.section{background:#fffdf9c4;backdrop-filter:blur(3px)}.why{background:#f1f8f7d9}.card-address{margin:12px 0 0!important;color:#7d8791!important;font-size:13px;line-height:1.45}.card-actions{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:auto}.card-actions .button{margin-top:0}.card-actions .directions{display:flex;align-items:center;justify-content:center;padding:15px 12px;border:1px solid var(--accent);border-radius:16px;color:var(--accent);font-size:13px;font-weight:900}.story{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;max-width:1500px;margin:auto}.story-copy{max-width:650px}.story-copy>p:not(.eyebrow){color:var(--muted);font-size:19px;line-height:1.6}.story-copy>a{display:inline-flex;gap:14px;margin-top:15px;color:var(--teal);font-weight:900}.story-orbits{min-height:300px;position:relative;border-radius:46px;background:linear-gradient(135deg,#fff9,#eff8f5d9);overflow:hidden}.story-orbits:before,.story-orbits:after{content:'';position:absolute;border:1px solid #12808324;border-radius:50%;animation:spin 20s linear infinite}.story-orbits:before{width:330px;height:330px;left:12%;top:-28px}.story-orbits:after{width:210px;height:210px;right:5%;bottom:-45px;animation-direction:reverse}.story-orbits i{position:absolute;display:grid;place-items:center;width:68px;height:68px;border-radius:22px;background:#fff;box-shadow:0 15px 30px #0c464719;color:var(--teal);font-style:normal;font-size:27px;animation:float 5s ease-in-out infinite}.story-orbits i:nth-child(1){top:42px;left:17%;color:#fb7b5a}.story-orbits i:nth-child(2){right:16%;top:78px;color:#8959f5;animation-delay:-1s}.story-orbits i:nth-child(3){bottom:37px;left:33%;color:#f7a108;animation-delay:-2.7s}.story-orbits i:nth-child(4){right:39%;bottom:56px;animation-delay:-4s}@keyframes drift{to{transform:translate(8vw,7vh) scale(1.12)}}@keyframes float{50%{transform:translateY(-13px) rotate(4deg)}}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:650px){#home{background-attachment:scroll}#home:before,#home:after{display:none}.card-actions{grid-template-columns:1fr}.story{grid-template-columns:1fr;gap:32px}.story-orbits{min-height:225px}}</style><script>
+document.querySelectorAll('.brand small').forEach((item)=>item.textContent='Group · working name');document.querySelectorAll('.nav a').forEach((item)=>{if(item.textContent==='Our Centers')item.textContent='Centers & Locations';if(item.textContent==='Locations'){item.textContent='Why Us';item.href='#why-us'}});document.querySelector('#locations').remove();const previewHead=document.querySelector('#centers .head');previewHead.innerHTML='<p class="eyebrow">OUR CENTERS & LOCATIONS</p><h2>Choose your world. Find it in Doha.</h2><p>Four distinctive destinations across The Gate Mall, The Pearl and Lagoona Mall. Every card includes the exact location, opening hours and directions.</p>';cards.innerHTML=centers.map(c=>`<article class="card" style="--accent:${c.accent}"><a href="#center/${c.id}"><div class="photo"><img src="${c.card}" alt="${c.name}"></div><div class="body"><p class="mall">⌖ ${c.mall}</p><h3>${c.name}</h3><p>${c.theme}</p><p class="card-address">${c.address}</p><small class="hours">${c.hours.map(x=>x.join(': ')).join(' · ')}</small><div class="card-actions"><span class="button">Explore Center →</span><span class="directions">Directions ↗</span></div></div></a></article>`).join('');const why=document.querySelector('.why');why.id='why-us';why.querySelector('.head').innerHTML='<p class="eyebrow">WHY FAMILIES CHOOSE US</p><h2>Built around the moments children remember.</h2><p>Parents most often celebrate the spaces that feel clean, imaginative and genuinely engaging — places their children ask to visit again.</p>';why.querySelector('.features').innerHTML='<div class="feature"><div class="icon">✦</div><h3>7+ Years</h3><p>Creating playful experiences for Doha families for more than seven years.</p></div><div class="feature"><div class="icon">✦</div><h3>Made to Explore</h3><p>Families highlight variety: imaginative corners, movement and hands-on moments within one visit.</p></div><div class="feature"><div class="icon">◌</div><h3>Thoughtfully Kept</h3><p>Clean, well-presented spaces are a theme that appears again and again in positive feedback.</p></div><div class="feature"><div class="icon">♡</div><h3>Worth Coming Back To</h3><p>When children leave still talking about the experience, it becomes part of a family’s routine.</p></div>';why.insertAdjacentHTML('afterend','<section class="section story"><div class="story-copy"><p class="eyebrow">THE CURIOCITY DIFFERENCE</p><h2>One group. Four reasons to come out and play.</h2><p>CurioCITY Group brings together different kinds of play under one thoughtful family-entertainment umbrella: soft-play energy, imaginative worlds, tactile making and a bold sensory escape.</p><a href="#centers">Find your nearest center →</a></div><div class="story-orbits" aria-hidden="true"><i>✦</i><i>◌</i><i>♡</i><i>⌖</i></div></section>');
+</script><style>.combined-story{max-width:930px;margin:58px auto 0;padding:31px 35px;display:flex;align-items:center;justify-content:space-between;gap:28px;border-radius:28px;background:#fffdf9c9;box-shadow:0 18px 38px #0c46470d}.combined-story p{margin:0;color:#687282;font-size:18px;line-height:1.55}.combined-story a{flex:0 0 auto;display:inline-flex;gap:11px;padding:14px 19px;border-radius:999px;background:#128083;color:#fff;font-weight:900}.activity-card{overflow:hidden;padding:0!important;display:grid;grid-template-rows:122px 1fr}.activity-card img{width:100%;height:122px;object-fit:cover}.activity-card>div{padding:23px 25px}.activity-card h3{margin:15px 0 9px!important}.activity-card p{margin:0!important;line-height:1.45}@media(max-width:650px){.combined-story{margin-top:35px;padding:25px;display:grid}.activity-card{grid-template-rows:150px 1fr}.activity-card img{height:150px}}</style><script>
+const activityMap={imagination:[['Creative Puzzles','Hands-on problem-solving moments.'],['Build & Create','A place to construct, try and imagine.'],['Coding Games','Interactive games made for curious minds.'],['Dress-Up Play','Characters and stories brought to life.']],play:[['Water Play','A tactile space to splash, explore and discover.'],['Climbing Nets','Movement and balance through active play.'],['Digital Wall Art','A screen-based creative experience.'],['Slides & Ball Pit','A classic play moment with a curious twist.']],sandbox:[['Construction Play','Big ideas begin with hands-on making.'],['Sand World','Dig, shape and experiment with texture.'],['Slime Studio','A colourful sensory activity.'],['Build Zones','Playful spaces designed around imagination.']],satisfactory:[['Interactive Technology','Play that responds to your movement.'],['Light & Sound','A vivid sensory atmosphere.'],['Projection Worlds','Step inside a story in motion.'],['Playful Experiences','Immersive moments made to explore.']]};
+function polishPreview(){const why2=document.querySelector('#why-us');if(!why2)return;const story=why2.nextElementSibling;if(story&&story.classList.contains('story'))story.remove();why2.querySelector('.head').innerHTML='<p class="eyebrow">THE CURIOCITY GROUP</p><h2>One group. More reasons to come out and play.</h2><p>For more than seven years, we have created family experiences where children can move, make, imagine and discover — and where families can find the right world of play for the day.</p>';why2.querySelector('.features').innerHTML='<div class="feature"><div class="icon">✦</div><h3>Made to Explore</h3><p>Imaginative worlds, active movement and hands-on discovery — all in one group.</p></div><div class="feature"><div class="icon">◌</div><h3>Thoughtfully Kept</h3><p>Clean, well-presented spaces are a theme that appears again and again in positive feedback.</p></div><div class="feature"><div class="icon">♡</div><h3>Worth Coming Back To</h3><p>When children leave still talking about the experience, it becomes part of a family’s routine.</p></div>';if(!why2.querySelector('.combined-story'))why2.insertAdjacentHTML('beforeend','<div class="combined-story"><p>From soft-play energy and creative role play to sand, construction and an immersive sensory world, CurioCITY Group brings together four distinct reasons to come out and play.</p><a target="_blank" href="https://apps.apple.com/qa/app/playfull-children-center-app/id6504391362">Reserve in PlayFULL →</a></div>');const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id);if(!c)return;const inside=document.querySelector('#detail .inside-grid');if(inside){inside.innerHTML=activityMap[id].map((x,i)=>`<article class="activity-card"><img src="${c.card}" alt=""><div><span>0${i+1}</span><h3>${x[0]}</h3><p>${x[1]}</p></div></article>`).join('');const action=document.querySelector('#detail .detail-actions');action.querySelector('h2').textContent='Ready to play?';action.querySelector('.button').textContent='Reserve in PlayFULL';action.querySelector('.button').href='https://apps.apple.com/qa/app/playfull-children-center-app/id6504391362';}}
+polishPreview();addEventListener('hashchange',()=>setTimeout(polishPreview,0));
+</script><style>
+/* Final compact direction — visual first, two actions only. */
+body,#home{background:#f4faf8 url('assets/curiocity-ambient-background.png') center/cover fixed}#home{background:linear-gradient(#fffdf97c,#fffdf989),url('assets/curiocity-ambient-background.png') center/cover fixed}.section{background:#fffdf980!important;backdrop-filter:blur(15px)}.why{background:transparent!important}.compact-brief{max-width:1040px;margin:0 auto;padding:36px clamp(24px,4vw,52px);background:#fffdf9b8;border-radius:0 0 32px 32px;color:#5d6878;font-size:clamp(20px,2vw,28px);font-weight:700;line-height:1.4;text-align:center;backdrop-filter:blur(15px)}.body{min-height:202px;padding:21px 25px}.body h3{margin:14px 0 9px;font-size:29px}.card .photo{height:255px}.card .body>span{margin-top:auto;color:var(--accent);font-weight:900}.proof{padding-top:70px!important;padding-bottom:80px!important;text-align:center}.proof .eyebrow{color:var(--teal)}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:1100px;margin:28px auto 0;border-top:1px solid #12808322;border-bottom:1px solid #12808322}.proof-grid article{padding:25px 32px}.proof-grid article+article{border-left:1px solid #12808322}.proof-grid strong{display:block;color:var(--teal);font:800 30px/1 Outfit}.proof-grid span{display:block;margin-top:8px;color:var(--muted);line-height:1.4}.compact-detail{min-height:calc(100vh - 82px);padding:34px clamp(22px,5vw,76px) 65px;background:linear-gradient(#fffdf984,#fffdf9b5),url('assets/curiocity-ambient-background.png') center/cover fixed}.compact-detail .back{display:inline-block;margin:0 0 20px;color:var(--teal);font-weight:900}.detail-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(460px,1.18fr);gap:52px;max-width:1320px;margin:auto}.detail-layout h1{font-size:clamp(48px,5.4vw,77px)}.detail-layout p:not(.eyebrow){color:var(--muted);font-size:18px;line-height:1.55}.detail-layout .eyebrow{color:var(--teal)}.activity-tags{display:flex;flex-wrap:wrap;gap:8px}.activity-tags span{padding:8px 11px;border:1px solid var(--accent);border-radius:99px;background:#fff9;color:var(--accent);font-size:13px;font-weight:900}.detail-info{display:grid;gap:6px;margin:24px 0;color:var(--muted);font-size:14px;line-height:1.45}.detail-info strong{color:var(--ink)}.compact-actions{display:flex;gap:11px;flex-wrap:wrap}.compact-actions .button.alt{border-color:var(--teal);background:#fff9;color:var(--teal)}.gallery{display:flex;gap:16px;min-width:0;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 17px}.gallery img{width:78%;min-width:420px;height:465px;object-fit:cover;border-radius:32px;scroll-snap-align:start;box-shadow:0 20px 40px #11222420}@media(max-width:800px){body,#home,.compact-detail{background-attachment:scroll}.detail-layout{grid-template-columns:1fr;gap:8px}.gallery img{height:340px;width:84%;min-width:84%}.proof-grid{grid-template-columns:1fr}.proof-grid article+article{border-left:0;border-top:1px solid #12808322}}@media(max-width:650px){.compact-brief{padding:28px 24px;border-radius:0;font-size:19px}.proof{padding-top:56px!important;padding-bottom:60px!important}.compact-detail{padding:24px}.gallery img{height:275px;border-radius:24px}.compact-actions{display:grid}.compact-actions .button{text-align:center}}
+</style><script>
+const appUrl='https://apps.apple.com/qa/app/playfull-children-center-app/id6504391362';
+function finalPreview(){
+  document.title='CurioCITY Group — visual preview'; document.querySelectorAll('.brand small').forEach(x=>x.textContent='Group · working name');
+  const cta=document.querySelector('.cta'); if(cta) cta.remove();
+  const heroButtons=document.querySelector('.hero .buttons');
+  if(heroButtons) heroButtons.innerHTML=`<a class="button" target="_blank" href="${appUrl}">Reserve in PlayFULL →</a><a class="button alt" href="tel:+97477233233">Call Us</a>`;
+  const oldWhy=document.querySelector('#why-us');
+  if(oldWhy){
+    if(!document.querySelector('.compact-brief')) oldWhy.insertAdjacentHTML('beforebegin','<section class="compact-brief">From creative role play and soft-play energy to sand, construction and immersive sensory worlds — CurioCITY Group gives families four distinctive ways to spend the day together.</section>');
+    oldWhy.className='section proof'; oldWhy.innerHTML='<p class="eyebrow">WHY FAMILIES RETURN</p><div class="proof-grid"><article><strong>7+ years</strong><span>creating playful family moments in Doha</span></article><article><strong>4 worlds</strong><span>for different moods and ways to play</span></article><article><strong>One group</strong><span>made for moving, making and imagining</span></article></div>';
+  }
+  cards.innerHTML=centers.map(c=>{const features=(activityMap[c.id]||[]).slice(0,2).map(x=>x[0]).join(' · ');return `<article class="card" style="--accent:${c.accent}"><a href="#center/${c.id}"><div class="photo"><img src="${c.card}" alt="${c.name}"></div><div class="body"><p class="mall">⌖ ${c.mall}</p><h3>${c.name}</h3><p>${features}</p><span>Explore →</span></div></a></article>`}).join('');
+  const id=location.hash.split('/')[1], c=centers.find(x=>x.id===id); if(!c) return;
+  const activities=(activityMap[c.id]||[]).map(x=>`<span>${x[0]}</span>`).join('');
+  const hours=c.hours.map(x=>x.join(': ')).join(' · ');
+  const detail=document.querySelector('#detail'); detail.className='detail active'; detail.style.cssText=`--accent:${c.accent};--a:${c.a};--b:${c.b}`;
+  detail.innerHTML=`<header class="header"><a class="brand" href="#home"><span class="star">✦</span><span>Curio<b>CITY</b><small>Group · working name</small></span></a><nav class="nav"><a href="#home">Back to Home</a><a href="#centers">Centers</a></nav></header><main class="compact-detail"><a class="back" href="#home">← Back to Home</a><section class="detail-layout"><div><p class="eyebrow">${c.mall.toUpperCase()} · DOHA, QATAR</p><h1>${c.name}</h1><p>${c.intro||c.theme}</p><div class="activity-tags">${activities}</div><div class="detail-info"><strong>${hours}</strong><span>${c.address}</span></div><div class="compact-actions"><a class="button" target="_blank" href="${appUrl}">Reserve in PlayFULL →</a><a class="button alt" href="tel:${c.phone.replaceAll(' ','')}">Call Us</a></div></div><div class="gallery" aria-label="${c.name} gallery"><img src="${c.hero}" alt="${c.name} interior"><img src="${c.card}" alt="${c.name} play area"></div></section></main>`;
+}
+finalPreview();addEventListener('hashchange',()=>setTimeout(finalPreview,0));
+</script><style>
+/* Glass transition and richer compact centre pages. */
+.compact-brief{position:relative;z-index:1;max-width:1080px;margin:-34px auto 0!important;padding:40px clamp(24px,4vw,56px) 27px!important;border:1px solid #ffffffd1;border-radius:34px!important;background:linear-gradient(120deg,#ffffff8a,#ffffff3b)!important;box-shadow:0 22px 55px #1f52521a,inset 0 1px #fff;isolation:isolate;backdrop-filter:blur(26px) saturate(145%)}.compact-brief:before,.compact-brief:after{content:'';position:absolute;z-index:-1;width:145px;height:145px;border-radius:50%;filter:blur(30px);opacity:.6}.compact-brief:before{left:-53px;bottom:-38px;background:#a7e8dd}.compact-brief:after{right:-44px;top:-45px;background:#ffb28e}.compact-brief div{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:20px}.compact-brief span{padding:7px 11px;border:1px solid #ffffffd9;border-radius:99px;background:#ffffff59;color:var(--teal);font-size:12px;font-weight:900}.proof{padding-top:90px!important}.proof-note{max-width:650px;margin:28px auto 0;color:#556577;font-size:18px;font-weight:800}.detail-best{padding:14px 16px;border-left:3px solid var(--accent);border-radius:0 16px 16px 0;background:#fff9;font-size:15px}.detail-info a{margin-top:3px;color:var(--teal);font-weight:900}@media(max-width:650px){.compact-brief{margin:0!important;border-radius:0!important;padding:30px 24px!important}}
+</style><script>
+const latestCopy={
+ imagination:{intro:'Your little one can step into colourful corners for building, making, dressing up and creating their own stories — all at their own pace.',best:'Toddlers and young children who love pretend play, making and discovery.',features:['Pretend Play','Build & Create','Puzzles & Games','Dress-Up Moments']},
+ play:{intro:'Your little one can climb, slide, splash and reset in a warm, wood-toned world made for hands-on toddler play.',best:'Toddlers and young children who enjoy movement, sensory play and gentle exploration.',features:['Strawberry Pool','Climbing Nets','Digital Wall Art','Slides & Ball Pit']},
+ sandbox:{intro:'Your little one can dig, pour, build and get creative with tactile play — a world where messy ideas turn into proud little projects.',best:'Toddlers and young children who love sensory play, building and making with their hands.',features:['Construction Play','Sand World','Slime Studio','Build Zones']},
+ satisfactory:{intro:'Made for guests aged 7+ and teens: a bold, social space where technology, light, sound and projection turn every visit into an immersive escape.',best:'Older children and teens aged 7+ who want something more immersive, sensory and social.',features:['Interactive Technology','Light & Sound','Projection Worlds','Playful Experiences','Immersive Escapes','Teen-Friendly Energy']}
+};
+function finalPreviewV2(){
+ document.title='CurioCITY Group — visual preview';document.querySelectorAll('.brand small').forEach(x=>x.textContent='Group');
+ document.querySelectorAll('.nav a').forEach(x=>{if(x.textContent.includes('Locations')){x.textContent='Our Centers';x.href='#centers'}});
+ const heroButtons=document.querySelector('.hero .buttons');if(heroButtons)heroButtons.innerHTML=`<a class="button" target="_blank" href="${appUrl}">Make booking online →</a><a class="button alt" href="tel:+97477233233">Call Us</a>`;
+ const brief=document.querySelector('.compact-brief');if(brief)brief.innerHTML='<div>From the first confident climb to a full sensory escape, CurioCITY Group gives families one trusted name — and four very different reasons to come back.</div><div><span>For toddlers</span><span>For families</span><span>For ages 7+ & teens</span></div>';
+ const why=document.querySelector('#why-us');if(why)why.innerHTML='<p class="eyebrow">WHY FAMILIES RETURN</p><div class="proof-grid"><article><strong>7+ years</strong><span>of welcoming Doha families into playful, memorable worlds</span></article><article><strong>3 toddler worlds</strong><span>for climbing, creating, splashing, digging and trying things independently</span></article><article><strong>1 teen escape</strong><span>an immersive, social sensory world for ages 7+ to experience together</span></article></div><p class="proof-note">Different ages. Different energy. One easy choice for a family day out.</p>';
+ cards.innerHTML=centers.map(c=>{let info=latestCopy[c.id];return `<article class="card" style="--accent:${c.accent}"><a href="#center/${c.id}"><div class="photo"><img src="${c.card}" alt="${c.name}"></div><div class="body"><p class="mall">⌖ ${c.mall}</p><h3>${c.name}</h3><p>${info.features.slice(0,2).join(' · ')}</p><span>Explore →</span></div></a></article>`}).join('');
+ const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id);if(!c)return;const info=latestCopy[id],hours=c.hours.map(x=>x.join(': ')).join(' · ');const gallery=[['hero','center'],['card','center'],['hero','22% center'],['card','78% center'],...(id==='satisfactory'?[['hero','72% center'],['card','28% center']]:[])];const detail=document.querySelector('#detail');detail.className='detail active';detail.style.cssText=`--accent:${c.accent};--a:${c.a};--b:${c.b}`;detail.innerHTML=`<header class="header"><a class="brand" href="#home"><span class="star">✦</span><span>Curio<b>CITY</b><small>Group</small></span></a><nav class="nav"><a href="#home">Back to Home</a><a href="#centers">Our Centers</a></nav></header><main class="compact-detail"><a class="back" href="#home">← Back to Home</a><section class="detail-layout"><div><p class="eyebrow">${c.mall.toUpperCase()} · DOHA, QATAR</p><h1>${c.name}</h1><p>${info.intro}</p><p class="detail-best"><b>Best for:</b> ${info.best}</p><div class="activity-tags">${info.features.map(x=>`<span>${x}</span>`).join('')}</div><div class="detail-info"><strong>${hours}</strong><span>${c.address}</span><a target="_blank" href="${c.ig}">Follow on Instagram ↗</a></div><div class="compact-actions"><a class="button" target="_blank" href="${appUrl}">Make booking online →</a><a class="button alt" href="tel:${c.phone.replaceAll(' ','')}">Call Us</a></div></div><div class="gallery" aria-label="${c.name} gallery">${gallery.map(([which,pos])=>`<img src="${c[which]}" style="object-position:${pos}" alt="${c.name} play area">`).join('')}</div></section></main>`;
+}
+finalPreviewV2();addEventListener('hashchange',()=>setTimeout(finalPreviewV2,0));
+</script><style>
+/* Open editorial layout: the transition flows with the page, without a frame. */
+.compact-brief{max-width:1240px!important;margin:0 auto!important;padding:88px clamp(24px,5vw,76px) 55px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}.compact-brief:before{left:7%!important;bottom:12%!important;opacity:.32!important}.compact-brief:after{right:6%!important;top:15%!important;opacity:.32!important}.compact-brief>div:first-child{max-width:1000px;margin:0 auto;color:#536174;font-size:clamp(25px,3vw,43px);font-weight:800;line-height:1.18;text-wrap:balance}.compact-brief span{border:0!important;background:#ffffff8c!important;box-shadow:0 8px 22px #185a5a14}.proof{padding-top:75px!important}.proof .head{margin-bottom:38px}.proof-grid{gap:26px;max-width:1240px!important;border:0!important}.proof-grid article{padding:17px 14px;background:linear-gradient(160deg,#ffffff61,#ffffff14);border-radius:22px}.proof-grid article+article{border:0!important}.proof-grid strong{font-size:clamp(27px,2.6vw,39px)}.proof-grid span{max-width:310px;margin-left:auto;margin-right:auto;font-size:15px}@media(max-width:850px){.proof-grid{grid-template-columns:repeat(2,1fr)!important}}@media(max-width:650px){.compact-brief{padding:62px 24px 42px!important}.compact-brief>div:first-child{font-size:27px}.proof-grid{grid-template-columns:1fr!important;gap:8px}.proof-grid article{padding:19px 12px}}
+</style><script>
+function finalPreviewV3(){
+ const why=document.querySelector('#why-us');if(!why)return;
+ why.innerHTML='<div class="head"><p class="eyebrow">WHY FAMILIES RETURN</p><h2>Big energy for little people. A brilliant day out for everyone.</h2><p>We bring together the ingredients families look for most: welcoming spaces, a reason to move, a reason to create and plenty to remember on the way home.</p></div><div class="proof-grid"><article><strong>7+ years</strong><span>of welcoming Doha families into playful, memorable worlds</span></article><article><strong>3 toddler worlds</strong><span>for climbing, splashing, digging and trying things independently</span></article><article><strong>1 teen escape</strong><span>an immersive social world for ages 7+ to experience together</span></article><article><strong>Made to move</strong><span>from first climbs to big slides, active bodies stay happily busy</span></article><article><strong>Made to make</strong><span>sand, slime, story-making and hands-on discovery turn play into pride</span></article><article><strong>Made to return to</strong><span>four different moods mean there is always another world to try next time</span></article></div><p class="proof-note">Different ages. Different energy. One easy choice for a family day out.</p>';
+}
+finalPreviewV3();addEventListener('hashchange',()=>setTimeout(finalPreviewV3,0));
+</script><script>
+function finalPreviewV4(){
+  document.querySelectorAll('a[href="#locations"]').forEach(link=>link.remove());
+  const footer=document.querySelector('.footer');if(footer){footer.querySelectorAll('a').forEach(link=>{if(link.textContent.trim()==='Locations')link.remove()})}
+  Object.assign(latestCopy.imagination,{intro:'A colourful launchpad for new stories: build, make, dress up and turn a regular afternoon into an adventure worth retelling.'});
+  Object.assign(latestCopy.play,{intro:'A warm, wood-toned world where young explorers can climb, slide, splash and build confidence through hands-on play.'});
+  Object.assign(latestCopy.sandbox,{intro:'A hands-on world where curious builders dig, pour, construct and transform bold ideas into proudly messy little projects.'});
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id);if(!c)return;
+  const info=latestCopy[id],hours=c.hours.map(x=>x.join(': ')).join(' · '),detail=document.querySelector('#detail');detail.className='detail active';detail.style.cssText=`--accent:${c.accent};--a:${c.a};--b:${c.b}`;detail.innerHTML=`<header class="header"><a class="brand" href="#home"><span class="star">✦</span><span>Curio<b>CITY</b><small>Group</small></span></a><nav class="nav"><a href="#home">Back to Home</a><a href="#centers">Our Centers</a></nav></header><main class="compact-detail"><a class="back" href="#home">← Back to Home</a><section class="detail-layout"><div><p class="eyebrow">${c.mall.toUpperCase()} · DOHA, QATAR</p><h1>${c.name}</h1><p>${info.intro}</p><p class="detail-best"><b>Best for:</b> ${info.best}</p><div class="activity-tags">${info.features.map(x=>`<span>${x}</span>`).join('')}</div><div class="detail-info"><strong>${hours}</strong><span>${c.address}</span><a target="_blank" href="${c.ig}">Follow on Instagram ↗</a></div><div class="compact-actions"><a class="button" target="_blank" href="${appUrl}">Make booking online →</a><a class="button alt" href="tel:${c.phone.replaceAll(' ','')}">Call Us</a></div></div><div class="gallery" aria-label="${c.name} gallery"><img src="${c.hero}" alt="${c.name} interior"><img src="${c.card}" alt="${c.name} play area"></div></section></main>`;
+}
+finalPreviewV4();addEventListener('hashchange',()=>setTimeout(finalPreviewV4,0));
+</script><script>
+function finalPreviewV5(){
+ const why=document.querySelector('#why-us');if(!why)return;
+ why.innerHTML='<div class="head"><p class="eyebrow">WHY FAMILIES RETURN</p><h2>Big imaginations, happy little moments and a brilliant family day out.</h2><p>We bring together the things families value most: welcoming spaces, hands-on discovery, room for make-believe and stories to bring home.</p></div><div class="proof-grid"><article><strong>7+ years</strong><span>of welcoming Doha families into playful, memorable worlds</span></article><article><strong>3 toddler worlds</strong><span>for climbing, creating, digging and discovering at their own pace</span></article><article><strong>1 teen escape</strong><span>an immersive sensory world for ages 7+ to explore together</span></article><article><strong>Made to imagine</strong><span>every corner invites a new story, a new idea or a new role to play</span></article><article><strong>Made to create</strong><span>sand, slime, building and hands-on discovery turn play into pride</span></article><article><strong>Made to return to</strong><span>four different worlds mean there is always another favourite to find</span></article></div><p class="proof-note">Different ages. Different moods. One easy choice for a family day out.</p>';
+}
+finalPreviewV5();addEventListener('hashchange',()=>setTimeout(finalPreviewV5,0));
+</script><script>
+function finalPreviewV6(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id);if(!c||id!=='satisfactory')return;
+  const gallery=document.querySelector('#detail .gallery');if(!gallery)return;
+  const additional=['satisfactory-touch.jpg','satisfactory-colour-wall.jpg','satisfactory-mirror.jpg','satisfactory-hidden-portal.jpg','satisfactory-light-tunnel.jpg','satisfactory-neon-door.jpg','satisfactory-portal.jpg','satisfactory-neon-room.jpg'];
+  gallery.innerHTML=`<img src="${c.hero}" alt="${c.name} interior"><img src="${c.card}" alt="${c.name} play area">${additional.map(file=>`<img src="assets/${file}" alt="Satisfactory experience">`).join('')}`;
+}
+finalPreviewV6();addEventListener('hashchange',()=>setTimeout(finalPreviewV6,0));
+</script><script>
+function finalPreviewV7(){
+  latestCopy.play.intro='A warm, wood-toned world where young explorers can climb, slide, discover and build confidence through hands-on play.';
+  if(location.hash==='#center/play'){const copy=document.querySelector('#detail .detail-layout p:not(.eyebrow)');if(copy)copy.textContent=latestCopy.play.intro;}
+}
+finalPreviewV7();addEventListener('hashchange',()=>setTimeout(finalPreviewV7,0));
+</script><script>
+function finalPreviewV8(){
+  latestCopy.satisfactory={intro:'A bold world of technology, light, sound and projection where families can step into a different kind of play together.',best:'Minimum age 4. Recommended for ages 10+. Children aged 4–9 visit with a parent, adult or nanny.',features:['Interactive Technology','Light & Sound','Projection Worlds','Playful Experiences','Immersive Escapes','Family-Friendly Visits']};
+  const brief=document.querySelector('.compact-brief');if(brief)brief.innerHTML='<div>From the first confident climb to a full sensory escape, CurioCITY Group gives families one trusted name — and four very different reasons to come back.</div><div><span>For toddlers</span><span>For families</span><span>For ages 4+ & teens</span></div>';
+  const why=document.querySelector('#why-us');if(why)why.innerHTML='<div class="head"><p class="eyebrow">WHY FAMILIES RETURN</p><h2>Big imaginations, happy little moments and a brilliant family day out.</h2><p>We bring together the things families value most: welcoming spaces, hands-on discovery, room for make-believe and stories to bring home.</p></div><div class="proof-grid"><article><strong>7+ years</strong><span>of welcoming Doha families into playful, memorable worlds</span></article><article><strong>3 toddler worlds</strong><span>for climbing, creating, digging and discovering at their own pace</span></article><article><strong>1 immersive world</strong><span>for ages 4+, with 10+ recommended and adult accompaniment for ages 4–9</span></article><article><strong>Made to imagine</strong><span>every corner invites a new story, a new idea or a new role to play</span></article><article><strong>Made to create</strong><span>sand, slime, building and hands-on discovery turn play into pride</span></article><article><strong>Made to return to</strong><span>four different worlds mean there is always another favourite to find</span></article></div><p class="proof-note">Different ages. Different moods. One easy choice for a family day out.</p>';
+  if(location.hash==='#center/satisfactory'){const info=latestCopy.satisfactory;const text=document.querySelector('#detail .detail-layout p:not(.eyebrow)');if(text)text.textContent=info.intro;const best=document.querySelector('#detail .detail-best');if(best)best.innerHTML=`<b>Best for:</b> ${info.best}`;const tags=document.querySelector('#detail .activity-tags');if(tags)tags.innerHTML=info.features.map(x=>`<span>${x}</span>`).join('');}
+}
+finalPreviewV8();addEventListener('hashchange',()=>setTimeout(finalPreviewV8,0));
+</script><script>
+const branchGallery={
+  imagination:['imagination-gallery-1.jpg','imagination-gallery-2.jpg','imagination-gallery-3.jpg','imagination-gallery-4.jpg','imagination-gallery-5.jpg','imagination-gallery-6.jpg'],
+  play:['play-gallery-1.jpg','play-gallery-2.jpg','play-gallery-3.jpg','play-gallery-4.jpg','play-gallery-5.jpg','play-gallery-6.jpg'],
+  sandbox:['sandbox-gallery-1.jpg','sandbox-gallery-2.jpg','sandbox-gallery-3.jpg','sandbox-gallery-4.jpg','sandbox-gallery-5.jpg','sandbox-gallery-6.jpg'],
+  satisfactory:['satisfactory-gallery-1.jpg','satisfactory-gallery-2.jpg','satisfactory-gallery-3.jpg','satisfactory-gallery-4.jpg','satisfactory-gallery-5.jpg','satisfactory-gallery-6.jpg','satisfactory-gallery-7.jpg','satisfactory-gallery-8.jpg']
+};
+function finalPreviewV9(){
+ const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id);if(!c)return;
+ const gallery=document.querySelector('#detail .gallery');if(!gallery)return;
+ const files=branchGallery[id]||[];gallery.innerHTML=`<img src="${c.hero}" alt="${c.name} interior"><img src="${c.card}" alt="${c.name} play area">${files.map(file=>`<img src="assets/${file}" alt="${c.name} experience">`).join('')}`;
+}
+finalPreviewV9();addEventListener('hashchange',()=>setTimeout(finalPreviewV9,0));
+</script><script>
+const fullSizeBranchGallery={
+imagination:['https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl-H1kAp9yo_UA9o3xC_iy1wZo_W5WzdrV53Zt9AtewhSOejwYSGv6u8tgnmJQcFoCL-fgo9Xl-7s4bSxy8AkOASYtNbf4q5Nze2UQbVlZ1nIMwaZ72smWHWzNF-twalLxNSpvWVZnXL70=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnzXclV4x1B0GtucK5zKtCnyBM9m2aVsVp4WMIqv3lSho_EFFxeevOsmZGoAz-zIC0I6qEXdrIVwgDTDR0tEohsRw4CR2E7YzMX4uyW3oaJoHI_Fs53A8-C26jF6Ki8G1K9yuhQ2e-cfqFI=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmLrV-YBikWokCV7_oHlA_gNV9xKMjCMghN2syT8W-Ea3q_NrOxjfvXKY4MoeUKwAY6M1cyl-Uj33aF84yUhdWBZX6FSaYPoC7qd2KzZwmB8F9-yezxEX1RuQ1CiZYeil34LtmS7w=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmOH_Fwy9WZ3d-UlJriZ3IqtC4H1njPp3wX0fBoPDo93rDQPhIi80LOQ6NtSxlcEZUS4xFb2SMo9D9gglWGRMiXfpYzdElDuXk4I3gmm4D5i-EdQyXBTgAchuVtsuFAFVT0gavh=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkH2zWrjM0S_OQeHlhIf98A_ZoXPMQ5KnQtoBmK4hNRbMEsll0SR1rW8YeXo_CCf4R1e-NC8LGQgH9xgfrbOd7zyczIU-L2AY0q2QN9kyYBcZPfvSEwjElLs3vBlPoFpMqpyI_ORKgIJ20C=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWndoOjz5d1CsBhdFLeNJIW8d3zcOfSqVe0mfYsikyXxooS1lzOQxjV5L3cSuzkj30n4OdhKgOijiSQqijlHB3Fs99zZXaS-2kIWGkbtOt1PA5lwtkBNFzA6qnHlbmcTFEwCH5GiVA=s1360-w1360-h1020-rw'],
+play:['https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk8K4hrFA56PDYQ9C1ei_u69idMiP9ZIstmjA4UMST7VRkC9We-Up33PtvYeTRQtfUW8AQv1hjcs2jtBiGdNCVyhOJHJDpert9iKltKMpZCRqCb8vKfM8KYUjQ0AndMf6-IoZ0Pqw=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlN8JYDUIY8RGTpbLEQVYa2sxBasbX-Fj4W-nNhN_gde8SsCXddLK4BS1D7xju6P9FFEShQjrxnhzs1U6cNS54l5xTqf6MXt_VQzS4AdWMDOjXNYAJjPKZEpnmOSgfw22PK19M=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn0rjkRgw0rcZxTaGKSuf-DfSoQ0cPHWl-GW4tmMeL3tzYjOTZbV-1h2mHOLQrm_jMawShBouugSqFJm4kwjipTIhcjunBP8BFjLb6YgQswS42o_271MePet4C1wy1sF3bSbkiXxQ=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlAszCK0DuCmGlBDbz9hLQJBHuXb1PrOA5glRfwCQZXi_6pUAIpqkW-dp-RWTeAlQEQ1vO9Ty8mC_4cD_P_lgJ0L_EAKs1kKaLnzuVKpiPFYF6swtkTs0vVXxbZnvT3fjbCAjk=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkVydd-krKBovfECZoRhc69mgPclEc721VSLgTPJ1KCEjlyqyg9B8_ONIQNNGSOQ3U8LIuZJ5X8eUlqRbbbnEA88dkdRUgpf4XhNUGBNZu8pIsTH86sd9PnZmKjQ0PBo8ejPesLiw=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlgNqRBy1Fq5wXE9hpZ_YF-qtRxTPDoR_dOMBltyw3W7G3x3LAF8fAhu9dx3WHp2oTtB1lNd7-FR2vNHhuKLNgOV-OkVYNg1E9C7SaeyxPbEzNECFV3xg_wuxbRtP_VKZBhxDgSNA=s1360-w1360-h1020-rw'],
+sandbox:['https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnKeMqlqROxKV-SOAyihjH3VD-7azw1kQbe1Iqx8F_pL6bKAaX6qsg6rZ7NhOYDe_uxXCWMb_jXrXmqlxL-5LXPHdtRL-1vppxaa-lpkE7kieIBCc-9qSnM6JEGN60I1JklSNG7=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmSBMh3ibeIt6d-UEKYhguieXFaaoaJHOVr14u7auFFlEbGVtR9GGJjy8ztsC3xT0fl0uJemn5J1Ap8sAZoYtufU3_VSgaIFA7N53tdK6FIwl_L5tcU4cff8NEGscvcwDdsW_Ed=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWklVQTnVRU8TGpsN3GhQ9Mwg9tPt__peffseiN54nkQZRIEMBn3cxBiarhgn6yQtKV5LPTsvjQeS3F-ZKjoG-HuqgEu691lmfhgXEQbZHCHPWxdfbYsF_5g0FnEizKjloNzLcf4=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmjaYB0iotSa8oLThKGY5mtFZcAN1gqylt1f3K13yrh8KmXxhBoq1F482rp73ftAZNAFae2rNkNXVr5dE4V9H3vd2TxcH_3XqRdrFryxAF26xuYV9yisrT4WGmfXnITPV8Vjpzs=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn3yxPZCVuqqJdpbmiPQ59u_LrKyp8ukxovpAYwX04VUuADanGSamqhAcM6L0Rp1CnMk9ncq6h9XAG_DrVzeCkKCeXmcy_24oFifJvx7HRzj93nWy7j-yjpNjkFjpMMAr4bHFJnBGW-7tK8=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnXvL8t3wXf9Ng_cpiNWdiPUdPWLLAoyYctnaPfWvtuuK6u9VrUSW05lZvbi8f30EVRGq1ZxSsz-6-IwEoPaGQkLNEu_5Iqs3fAu8hqWki6CfVaP-BtW3GkBsWgO8685-WzQn-N=s1360-w1360-h1020-rw'],
+satisfactory:['https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkEzpqVfvSbeKU0lEv9Hbr5iF0y8IgReopxHKzvJ2CcHWJvCIehZll3E-hR8NR1QOAdb3c5DG7V2zY-V7F74WA--cOstFIsf8cksbKZCLeKdNTusGgXdp8FNN0slLRbCsFKacFrOqdqfrYV=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlSR1VyzgLwoGIlHM9KmglLqsNd--xEReG52lsA1UNPhSWkuhWIXXSav6y76zKPnKDTmsiEgl4cfQUn7VzQTn-x7UpC75lnbrdmdZZ-AA3jQCo19iPqS05NH-yGhKXaxYfvkjwv42MuBrVj=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlVZygzxAV9P2Kkka-idUuMq9y2Wm7TDNtVieZA-_ygEvrruCzCEjxq0au1ugLUxYh_puNml5QAlSF8LVRq6wvfy6M2bBJG3kNwPw4vQ1JB263EADSbdiuoinUx6fDrKcWhEEGyLJSSNtfg=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnDzU7gOgbXEqkDpDEV3Q0YukIuwU8uFZSzo_kTp_8REUiHWMjC3UTTSuvZNwHq5Y0Ee0lW-T_rlMioChPuZ0x42XcAyn_z4Y-JFJ7-R5QV-wIShzJdyWIyYo3VnWzBWbAtQvspgdIh0NCC=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmhFHRYXUm6G-vwZ8jOxeTtF2Per-Vl36EMZ0-FTVaLF43f2sFsZKca0HAkfPVMcBm9AVDMP0GL36iTbtk_M1O84Bf6QQ4mh77mT95S0fZhtIDjsGgBeU6W_kPoXEaOdilOnyiZ14hpFnRi=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnBOgQkxpvpUhjbXS8JX27E_6Vxxx6OROQRiUO9DC5UCkvqwsjjSVWLaBUWNumZDqPyTlNdo1XjeNwZiVplcdDAj0IqsZAKFT1eBtNt-RnST8D5iZwpgIFDzS2PSWwO9CDDs7_xcKoVgQgz=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnwFV2QBPJSnLncNRR8RB711vjZIuN_JlPGkxVhsWNaI-l8G9Zs3vr2T9D09IMGr-vTWslmzLgVd8fAc0fJcdkfEa-BaVAdQgA5WoKArswKvz9PDP25ZnbU73hsDpQm3rdGKFL6sYh9MBX3=s1360-w1360-h1020-rw','https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm-p_-IFcTis_LWEw1wwcLkl2DbsJPCQ9tmISODMtO6ZzhTUWG3Q9uaHUaNKluahkJnCiAL55yZdL2lE8xZ1a6TOe5YFMKy8Hv5nkdQxN-avEfey0EiT7gfxFlzdB284-qBa6IMgd3km9HY=s1360-w1360-h1020-rw']};
+function finalPreviewV10(){const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');if(!c||!gallery)return;gallery.innerHTML=`<img src="${c.hero}" alt="${c.name} interior"><img src="${c.card}" alt="${c.name} play area">${(fullSizeBranchGallery[id]||[]).map((url,index)=>`<img src="${url}" alt="${c.name} experience ${index+1}">`).join('')}`;}
+finalPreviewV10();addEventListener('hashchange',()=>setTimeout(finalPreviewV10,0));
+</script><script>
+function finalPreviewV11(){const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');if(!c||!gallery)return;const lead=id==='imagination'?`<img src="${c.card}" alt="${c.name} play structure">`:`<img src="${c.hero}" alt="${c.name} activity space"><img src="${c.card}" alt="${c.name} play structure">`;gallery.innerHTML=`${lead}${(fullSizeBranchGallery[id]||[]).map((url,index)=>`<img src="${url}" alt="${c.name} activity ${index+1}">`).join('')}`;}
+finalPreviewV11();addEventListener('hashchange',()=>setTimeout(finalPreviewV11,0));
+</script><script>
+function finalPreviewV12(){const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');if(!c||!gallery)return;const lead=id==='imagination'?`<img src="${c.card}" alt="${c.name} play structure">`:`<img src="${c.hero}" alt="${c.name} activity space"><img src="${c.card}" alt="${c.name} play structure">`;const satisfActivities=['satisfactory-touch.jpg','satisfactory-colour-wall.jpg','satisfactory-mirror.jpg','satisfactory-hidden-portal.jpg','satisfactory-light-tunnel.jpg','satisfactory-neon-door.jpg','satisfactory-portal.jpg','satisfactory-neon-room.jpg'];const extra=id==='satisfactory'?satisfActivities.map((file,index)=>`<img src="assets/${file}" alt="${c.name} activity ${index+1}">`).join(''):'';gallery.innerHTML=`${lead}${extra}${(fullSizeBranchGallery[id]||[]).map((url,index)=>`<img src="${url}" alt="${c.name} activity ${index+1}">`).join('')}`;}
+finalPreviewV12();addEventListener('hashchange',()=>setTimeout(finalPreviewV12,0));
+</script><script>
+document.querySelector('.top')?.remove();
+const backToTop=document.createElement('button');backToTop.type='button';backToTop.className='top';backToTop.setAttribute('aria-label','Back to top');backToTop.textContent='↑';backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));document.body.append(backToTop);
+</script><script>
+/* Final gallery pass: real branch imagery only — no ads, no generated visuals, no low-res thumbnail set. */
+function finalPreviewV13(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');
+  if(!c||!gallery)return;
+  const lead=id==='imagination'
+    ?`<img src="${c.card}" alt="${c.name} play structure">`
+    :`<img src="${c.hero}" alt="${c.name} activity space"><img src="${c.card}" alt="${c.name} play structure">`;
+  gallery.innerHTML=`${lead}${(fullSizeBranchGallery[id]||[]).map((url,index)=>`<img src="${url}" alt="${c.name} activity ${index+1}">`).join('')}`;
+}
+finalPreviewV13();addEventListener('hashchange',()=>setTimeout(finalPreviewV13,0));
+</script><style>
+/* Gallery images stay deliberately large so each real space can be properly seen. */
+.gallery img{width:clamp(340px,38vw,560px)!important;min-width:clamp(340px,38vw,560px)!important;height:clamp(390px,48vw,660px)!important;border-radius:32px!important;box-shadow:0 20px 40px #11222420!important}
+@media(max-width:650px){.gallery img{width:78vw!important;min-width:78vw!important;height:510px!important;border-radius:26px!important}}
+</style><script>
+/* Strictly approved gallery set: no children, reception, price boards, ads or generated artwork. */
+function finalPreviewV14(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');
+  if(!c||!gallery)return;
+  const lead=id==='imagination'
+    ?`<img src="${c.card}" alt="${c.name} play structure">`
+    :`<img src="${c.hero}" alt="${c.name} activity space"><img src="${c.card}" alt="${c.name} play structure">`;
+  const activity=id==='satisfactory'
+    ?'<img src="assets/satisfactory-touch.jpg" alt="Satisfactory Soft Touch activity"><img src="assets/satisfactory-light-tunnel.jpg" alt="Satisfactory light activity">'
+    :'';
+  gallery.innerHTML=`${lead}${activity}`;
+}
+finalPreviewV14();addEventListener('hashchange',()=>setTimeout(finalPreviewV14,0));
+</script><script>
+/* Restore the full original activity gallery. V12/V14's promotional and synthetic extras remain excluded. */
+function finalPreviewV15(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');
+  if(!c||!gallery)return;
+  const lead=id==='imagination'
+    ?`<img src="${c.card}" alt="${c.name} play structure">`
+    :`<img src="${c.hero}" alt="${c.name} activity space"><img src="${c.card}" alt="${c.name} play structure">`;
+  gallery.innerHTML=`${lead}${(fullSizeBranchGallery[id]||[]).map((url,index)=>`<img src="${url}" alt="${c.name} activity ${index+1}">`).join('')}`;
+}
+finalPreviewV15();addEventListener('hashchange',()=>setTimeout(finalPreviewV15,0));
+</script><script>
+/* Final manual curation: empty activity/interior shots only. */
+const curatedActivityGallery={
+  imagination:[
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkzH_UlRWQjDi-nMheVgljVIxYIHDCGdJvNgxOJgIsnYNZAt5uXUYvn7f4brRDSds3K2lhX-FP0yMxgcmCcxMFKOIAdB17Y-j74mYHcqY9Ky8VbPzJiBcTVJXP0TDOmv5q0Y0NV=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkCBovE4xN0g_o8WnM8Uy2D-3xgprFk-8Hrr9QWdhcabktcLQN5IzCr9bTyXVGn4BWZUDjHvg1hlvaSxZMGbK9VmJyOcxYmmISQZg6vrcfQQoD2Ya4NSVV_rdtzaCNa6z0uM3KYGW_4pEKL=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlifiJjKtd39PgEKLMWTRKo1bTdJlcug-Ic0vfgvnfq9_C6OnWfNHvZCQojQjGxs74l7XlypRb5fxGMFu-9YB0Mr8myvzrA7mPzc7FZPMxS3sqzFBKkxdK9chk6e3RBptJ2SNcazA=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnQT60h8q_LPiGRw-Ww1iAilD6-K540hSZEXSxJwpC_oxNRWNHNTSLpmm8v2PS1lNzSYoiF5VB_fHvRQJ7xRGmo0sy0HQsIv4hApj5-VMoE3XUcxD1o1k9erx4i8n2hnrX3CxwM1tlJR-SA=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm0iREYqs4eah9nthILq7R7oGsS-YHie9V-yyFeORzWdHts3n-AUmH223lq_4621q3x3jUkrzAkCN1Je4eD6gQ9cJSZxzREfMbyoDjuylQns8egmylUSmP7U-oa72XNrski7geDKELywt6b=s1360-w1360-h1020-rw'
+  ],
+  play:[
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnvV5I06h6bWkKg-YC4ermiIj27Dd8OtGp2vWU_FoZXL2HIofdrDL7CXZb5GsUEv2EJQxrR-pnPyAzfT8xrJwgPUFspRLcCfFqr_TKharJoRb5ZtafGrjlrO_eY23SsCbf61tEj=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkueGRxyyQfRU2yUoIkzUZFOh1Djz1EqM5NkXEIhGoXM--6aERHHCRnOfmPji_T_o9lROxfG6q6cT7xnqnUjw4QD9bA3ZiqWPgWjU4xPZD2kQ2RHnwZmOPm-sesChDz7q9N4ZxYBw=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkS1VFO_vU-L5Oe2rUgbsQf1yKnEq4X7rnfMcgvJVCobmfpJbZtYpjxFl8kXm6AzUg_P7Kkcmt9XahChommfuKqzQxqKi14lPK6_6SyQ-5Muord7qJm4kGdeVLELm8y3NZoxohG=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkmL4xY6A8X8BkVgb0WGE6ta8yZYkzwgvjuVLeUjh3RJo84tALGgxrAz9qEzeCSlRBZ9e08N_mRKHhjFaKXGUflFjNEXvDXI2_6ny7czV5rZZcZEv5YU6tJS5MJNsCACUrkiFfL=s1360-w1360-h1020-rw'
+  ],
+  satisfactory:[
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlq19E715lEqf_17ao9FPjfsfL5SrSGW4nR-LOJe_oh2To1vYb--CgbPR0fOFDRYn9s2frxC0r3qR0KMBI_HSs0CNha8m3qohJqz9TAAievaRvH1moLhoGYvcaT8UvHyXdWJJIcx3IKnYrK=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnBOgQkxpvpUhjbXS8JX27E_6Vxxx6OROQRiUO9DC5UCkvqwsjjSVWLaBUWNumZDqPyTlNdo1XjeNwZiVplcdDAj0IqsZAKFT1eBtNt-RnST8D5iZwpgIFDzS2PSWwO9CDDs7_xcKoVgQgz=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn1SMh5utztBIDf456yFzezuUwpoa6CgzHTQATcwafSFNet8zjL8f5b3rW9IiRlacOatfpJurFm9iKVkywq6AVNWBF5MYkGtmvqoQZHtmfuhQP0qbW4b1We4vUk-eU4Sq62DyRkrQU03YI=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWltMdDFhXpZg65K_TTRNQida0ahZcwb8wE6ULquLzLvF2xVLlLeGa3VoDWFdHIWNUU16dWFUDceZN_SB53PCCih69WymO0_YEhgIww8_vAiW8QTTHDa1ayvRjbeeZUbG2dZxKoO6KsX67Xd=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmNRWZAJJ4o-g7igyLOj2o1-s8blMy3W45siEC_13JPJxvi-2Vq3qsMMM4JC5eHK2lHhLoTaZKLSbQc5g0A0JWBz06xNjZT7HCAgNYoVoYk8VUTERwnaZ2Ot8QEbBuvEahaHjmT-0PySMIH=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlSR1VyzgLwoGIlHM9KmglLqsNd--xEReG52lsA1UNPhSWkuhWIXXSav6y76zKPnKDTmsiEgl4cfQUn7VzQTn-x7UpC75lnbrdmdZZ-AA3jQCo19iPqS05NH-yGhKXaxYfvkjwv42MuBrVj=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnOWdWu77PB6drXcAv6egiopUESGgdrwf7UDBlOxXawxGRxObVGUZQ4y-eE25qNeCpo8ZaLJnEyZ5AmrihI4yftsWoe23DyRA6hmThem2zqHG5IDWKFll6mg_67LGJN7kB7kt6gc_vBRl2u=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm2_K46WxSUmqDklFG5XPS-lGnbRR8L7v9LtPxLeIcVABTGmXRvbfyczMupbXB0UGHG5J6qGcS56GdXSTKAJWXCNDNzqq4f7lcJIQo9e2VYpEPDs2S3EQpE98Wssif6ClAbmBfUth9SMCQF=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkVNq86-VboiPB0qj9tayCedRWKIiko73ZG-PoMTQUpbGHwbV4-HtNTGU-5jkkxCQFiRYaFr9gY8yh-5fI1rZoiPfbg1ZfJRDGWFOC4mt_bg0hhk68sKHqSDBEuuO19KM1xyGv3LnPQYL0=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm2waGfmPDYc2rhf2212z1BpGFkovgZjutQzQTHQpAMD90KMbLH-IqksLAg3S-2YJtnq_0VJ_g9utjO4TnSQwGWsqclraH57VsXBFvv2xtND0kmEk70QWf0EFJkS_qRH-drGR8xdlkdEbcf=s1360-w1360-h1020-rw'
+  ]
+};
+function finalPreviewV16(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');
+  if(!c||!gallery)return;
+  const lead=id==='imagination'
+    ?`<img src="${c.card}" alt="${c.name} play structure">`
+    :id==='satisfactory'
+      ?`<img src="${c.hero}" alt="${c.name} activity space">`
+      :`<img src="${c.hero}" alt="${c.name} activity space"><img src="${c.card}" alt="${c.name} play structure">`;
+  const activity=curatedActivityGallery[id]||(id==='sandbox'?(fullSizeBranchGallery.sandbox||[]):[]);
+  gallery.innerHTML=`${lead}${activity.map((url,index)=>`<img src="${url}" alt="${c.name} activity ${index+1}">`).join('')}`;
+}
+finalPreviewV16();addEventListener('hashchange',()=>setTimeout(finalPreviewV16,0));
+</script><script>
+/* V17: reviewed local originals only. Sandbox deliberately remains untouched. */
+const galleryReviewV17={
+  imagination:['assets/imagination-gallery-3.jpg','assets/imagination-gallery-4.jpg','assets/imagination-gallery-5.jpg'],
+  play:['assets/play-gallery-1.jpg','assets/play-gallery-2.jpg','assets/play-gallery-3.jpg'],
+  satisfactory:['assets/satisfactory-gallery-1.jpg','assets/satisfactory-gallery-2.jpg','assets/satisfactory-gallery-3.jpg','assets/satisfactory-gallery-4.jpg','assets/satisfactory-gallery-5.jpg','assets/satisfactory-gallery-6.jpg','assets/satisfactory-gallery-7.jpg','assets/satisfactory-gallery-8.jpg','assets/satisfactory-touch.jpg','assets/satisfactory-light-tunnel.jpg']
+};
+function finalPreviewV17(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');
+  if(!c||!gallery||id==='sandbox')return;
+  const lead=id==='imagination'
+    ?`<img src="${c.card}" alt="${c.name} play structure">`
+    :id==='satisfactory'
+      ?`<img src="${c.hero}" alt="${c.name} activity space">`
+      :`<img src="${c.hero}" alt="${c.name} activity space"><img src="${c.card}" alt="${c.name} play structure">`;
+  const activity=galleryReviewV17[id]||[];
+  gallery.innerHTML=`${lead}${activity.map((url,index)=>`<img src="${url}" alt="${c.name} activity ${index+1}">`).join('')}`;
+}
+finalPreviewV17();addEventListener('hashchange',()=>setTimeout(finalPreviewV17,0));
+</script><script>
+/* V18: full-resolution originals only. Sandbox stays exactly as it was. */
+const fullResReviewV18={
+  imagination:[
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkCBovE4xN0g_o8WnM8Uy2D-3xgprFk-8Hrr9QWdhcabktcLQN5IzCr9bTyXVGn4BWZUDjHvg1hlvaSxZMGbK9VmJyOcxYmmISQZg6vrcfQQoD2Ya4NSVV_rdtzaCNa6z0uM3KYGW_4pEKL=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlifiJjKtd39PgEKLMWTRKo1bTdJlcug-Ic0vfgvnfq9_C6OnWfNHvZCQojQjGxs74l7XlypRb5fxGMFu-9YB0Mr8myvzrA7mPzc7FZPMxS3sqzFBKkxdK9chk6e3RBptJ2SNcazA=s1360-w1360-h1020-rw'
+  ],
+  play:[],
+  satisfactory:[
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlq19E715lEqf_17ao9FPjfsfL5SrSGW4nR-LOJe_oh2To1vYb--CgbPR0fOFDRYn9s2frxC0r3qR0KMBI_HSs0CNha8m3qohJqz9TAAievaRvH1moLhoGYvcaT8UvHyXdWJJIcx3IKnYrK=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnBOgQkxpvpUhjbXS8JX27E_6Vxxx6OROQRiUO9DC5UCkvqwsjjSVWLaBUWNumZDqPyTlNdo1XjeNwZiVplcdDAj0IqsZAKFT1eBtNt-RnST8D5iZwpgIFDzS2PSWwO9CDDs7_xcKoVgQgz=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn1SMh5utztBIDf456yFzezuUwpoa6CgzHTQATcwafSFNet8zjL8f5b3rW9IiRlacOatfpJurFm9iKVkywq6AVNWBF5MYkGtmvqoQZHtmfuhQP0qbW4b1We4vUk-eU4Sq62DyRkrQU03YI=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWltMdDFhXpZg65K_TTRNQida0ahZcwb8wE6ULquLzLvF2xVLlLeGa3VoDWFdHIWNUU16dWFUDceZN_SB53PCCih69WymO0_YEhgIww8_vAiW8QTTHDa1ayvRjbeeZUbG2dZxKoO6KsX67Xd=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmNRWZAJJ4o-g7igyLOj2o1-s8blMy3W45siEC_13JPJxvi-2Vq3qsMMM4JC5eHK2lHhLoTaZKLSbQc5g0A0JWBz06xNjZT7HCAgNYoVoYk8VUTERwnaZ2Ot8QEbBuvEahaHjmT-0PySMIH=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlSR1VyzgLwoGIlHM9KmglLqsNd--xEReG52lsA1UNPhSWkuhWIXXSav6y76zKPnKDTmsiEgl4cfQUn7VzQTn-x7UpC75lnbrdmdZZ-AA3jQCo19iPqS05NH-yGhKXaxYfvkjwv42MuBrVj=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnOWdWu77PB6drXcAv6egiopUESGgdrwf7UDBlOxXawxGRxObVGUZQ4y-eE25qNeCpo8ZaLJnEyZ5AmrihI4yftsWoe23DyRA6hmThem2zqHG5IDWKFll6mg_67LGJN7kB7kt6gc_vBRl2u=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm2_K46WxSUmqDklFG5XPS-lGnbRR8L7v9LtPxLeIcVABTGmXRvbfyczMupbXB0UGHG5J6qGcS56GdXSTKAJWXCNDNzqq4f7lcJIQo9e2VYpEPDs2S3EQpE98Wssif6ClAbmBfUth9SMCQF=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkVNq86-VboiPB0qj9tayCedRWKIiko73ZG-PoMTQUpbGHwbV4-HtNTGU-5jkkxCQFiRYaFr9gY8yh-5fI1rZoiPfbg1ZfJRDGWFOC4mt_bg0hhk68sKHqSDBEuuO19KM1xyGv3LnPQYL0=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm2waGfmPDYc2rhf2212z1BpGFkovgZjutQzQTHQpAMD90KMbLH-IqksLAg3S-2YJtnq_0VJ_g9utjO4TnSQwGWsqclraH57VsXBFvv2xtND0kmEk70QWf0EFJkS_qRH-drGR8xdlkdEbcf=s1360-w1360-h1020-rw'
+  ]
+};
+function finalPreviewV18(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');
+  if(!c||!gallery||id==='sandbox')return;
+  const lead=id==='imagination'?`<img src="${c.card}" alt="${c.name} play structure">`:id==='satisfactory'?`<img src="${c.hero}" alt="${c.name} activity space">`:`<img src="${c.hero}" alt="${c.name} activity space"><img src="${c.card}" alt="${c.name} play structure">`;
+  gallery.innerHTML=`${lead}${(fullResReviewV18[id]||[]).map((url,index)=>`<img src="${url}" alt="${c.name} activity ${index+1}">`).join('')}`;
+}
+finalPreviewV18();addEventListener('hashchange',()=>setTimeout(finalPreviewV18,0));
+</script><script>
+/* V19: confirmed centre-zone labels. Sandbox remains unchanged. */
+Object.assign(latestCopy.imagination,{features:['Costume Corner','Garden Zone','Play Kitchen','Construction Zone','Pirate Ship','Train Play']});
+Object.assign(latestCopy.play,{features:['Strawberry Pool','Soft Play','Climbing Nets','Slides & Ball Pit']});
+Object.assign(latestCopy.satisfactory,{features:['Slime Area','Giant Ball Pit','Projection Slide','MultiBall System','Trampoline','Light Installations','Lava Floor Game','Laser Challenge','Star Climb','Evil Eyes']});
+function finalPreviewV19(){
+  const id=location.hash.split('/')[1],info=latestCopy[id],detail=document.querySelector('#detail');
+  if(info&&detail?.classList.contains('active')){const tags=detail.querySelector('.activity-tags');if(tags)tags.innerHTML=info.features.map(x=>`<span>${x}</span>`).join('');}
+  if(!id){document.querySelectorAll('#cards .card').forEach(card=>{const href=card.querySelector('a')?.getAttribute('href')||'';const key=href.split('/')[1],copy=latestCopy[key];const text=card.querySelector('.body p:not(.mall)');if(copy&&text)text.textContent=copy.features.slice(0,2).join(' · ');});}
+}
+finalPreviewV19();addEventListener('hashchange',()=>setTimeout(finalPreviewV19,0));
+</script><script>
+/* V20: restored full-resolution Gate and Pearl activity galleries. Sandbox untouched. */
+Object.assign(fullResReviewV18,{
+  imagination:[
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnMiX99KoMmr3Q7Uhi7oV3GVBLBAIelTJTYS6SU8xy6sjWGK35H85MahoH43_5gdnyKieJCmwH19n54SHEmeYeUbpJTntDBDU7N0qT08uWL3H86JFXsOyepYuiK23D_8p5xUMY9=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9AaIe-2qlz4k-BLTackLiQFyZUQX7mEs7Dztyiq6ljzVk2kq7Bio5Je1mihmpQgN3WjZemaIs1cxEmaWm_bfA6uUodSOdZZlpSqX3kdyG5qe98VIJQwaJ0vD1DZ4pmbmFctNz=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnAff-f4TNe3GWcY--TTJ8gvmA74Q3Ma0eEvuuwURl69xKWPu_cT8uaPkv4r3TF4K9G7oiFMzs6VBVmEpE5Z90Upp003iiTswoipz8xakO7Is4Vg5nQVF87guaVt3Xm2bvt1NMA9Q=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmZcf32cFRmN0EpN-gcfWZUsgYEmOs6JBOjRh_QUnv9ehcSvkRIUxSJNAoQlFtKb12tBKTOW-b4pbTjdL5fjUumqGVXmZPAaillbHKwASmVwKDaPW5575OiKkwSPyB9qMSQ5xAzig=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmT5dR5jejefRJmI9AqU6uOy9O09b-8jnu3gXaa_SbN8JBhV3012C6pVzE4-qcHz4QdG1UybyGVLr2taH9XsfK5FnSRVR3NfsgVLafE_F0nyQ6JrADZ-vog4jS7JsL9OINKWH3sKgEsMftO=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmewQ708kyw_LeeY-C4yDWBCGH_bplCCw09GAh8zE8cT76K470-BQPn0qDU7yQgwaBT0m8lj5_9-prKFyU2FXuX79ptUSse1jJbsACQuv6cFqFQb023ZB34qngblQW4RSrkJ833MpR5qV0=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnqTjvKPPvHLR99ksWQYNtgncF_VLOsOEb6qBbmaoPjB3LMmGVt390PLKWO0kYIlyS__-ks-zK8wg8QrkfnJKdkcoGxxNYsyCboflr0ZEFznvPmNiR5nZgR_59OOPkgxVVaRKbWFg=s1360-w1360-h1020-rw'
+  ],
+  play:[
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkbViSCyZ1sG3kwo35LYqyW02zSaUj1vcnD8Ub9IS7CNGCPgsDNggh5DtHFAj5dpugzTfL4WUeWVi3AtrxvFoU8qOZLGFFZxeyArDkvAJxIwhoSXvIPKpvzRGk821J2ZRVkMaci=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlYQQfy6LQ0BzvUWLKDZSfSNmK3iV1E4tjrfJF9vti8mvWg4VFuHv79UDF9i6ZAhYolzC_IfP6lPj-EGNVOPSBvoUOXUoqtxFD92JZkIQZM5F0QXGvB0m_hG7BDauR8G0-b_z7V1w=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlQY7Ol_nxrLtdgTymE-7NKnLS5YWv1HrfsbajemV_LIMHMmQIIo4WRgYDoBkwdafewlyZyNm9bI5Qh4pSNQNyA1QyOHCN6VCXAvxBrIl0iLtYDOHLeGnVseZKW768tD-XVgU3NLQ=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmYFjQLNY4y_yYj39j1b3fRh1z1NFWgGKqEBdSPAyy9nAYgGCglifsrZJgxZaD-h-_3_JdQFaKG0943s_kH1UbFaG3n2nqK-XPJOEQ5EnRe4JxJ3kk_aBjArjC2HVRYn9TVRD8tlzapx6E=s1360-w1360-h1020-rw',
+    'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnb5gwaTpfRmyXN2PYa_BhCzuwegydLIexVu67mqXgdL064WwCwxMAsfKYkAjPUAo4xnzdnbOTzvnd994VR_U9Cwy7m4tCSgim8_pAvAAdhaxQur16lIw7OQ8dioOWtG4eDiJIR=s1360-w1360-h1020-rw'
+  ]
+});
+finalPreviewV18();addEventListener('hashchange',()=>setTimeout(finalPreviewV18,0));
+</script><script>
+/* V21: removed the three gallery frames specifically flagged in review. */
+fullResReviewV18.play=fullResReviewV18.play.filter(url=>!url.includes('AHRPTWnb5gwaTpfRmyXN2PYa'));
+fullResReviewV18.satisfactory=fullResReviewV18.satisfactory.filter(url=>
+  !url.includes('AHRPTWnBOgQkxpvpUhjbXS8J')&&!url.includes('AHRPTWkVNq86-VboiPB0qj9t')
+);
+finalPreviewV18();addEventListener('hashchange',()=>setTimeout(finalPreviewV18,0));
+</script><style>
+/* V22: mobile compact layout — horizontal swipes replace long card stacks. */
+@media(max-width:650px){
+ html{scroll-padding-top:64px}.header{height:64px;padding:0 17px}.brand{font-size:20px}.star{font-size:27px}.header .nav{display:flex;max-width:51vw;gap:13px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;font-size:13px}.header .nav::-webkit-scrollbar{display:none}.nav .contact{padding:9px 12px}
+ .hero{min-height:78svh;padding:82px 22px 46px;background-position:60% center}.hero h1{font-size:clamp(40px,11vw,53px);letter-spacing:-2.4px}.hero p:not(.eyebrow){font-size:16px;line-height:1.46}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}.button{padding:14px 10px;text-align:center;font-size:14px}
+ .compact-brief{padding:38px 22px 26px!important}.compact-brief>div:first-child{font-size:23px!important;line-height:1.2}.compact-brief div+div{justify-content:flex-start;margin-top:15px}
+ .section{padding:48px 0}.head{padding:0 22px;margin-bottom:23px}.section h2{font-size:34px;letter-spacing:-1.8px}.head p:last-child{font-size:15px;line-height:1.42}
+ #home .grid{display:flex;gap:14px;overflow-x:auto;margin:0;padding:0 22px 12px;scroll-snap-type:x mandatory;scroll-padding-left:22px;scrollbar-width:none}#home .grid::-webkit-scrollbar{display:none}#home .card{flex:0 0 min(82vw,330px);scroll-snap-align:start;border-radius:24px}.card .photo{height:205px}.body{min-height:170px;padding:18px 19px}.body h3{margin:14px 0 9px;font-size:25px}.body>p:not(.mall){font-size:14px}.mall{font-size:13px}
+ .proof{padding:50px 18px 46px!important}.proof .head{padding:0;margin-bottom:19px}.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;margin-top:0}.proof-grid article{min-height:111px;padding:15px 10px;border-radius:17px}.proof-grid strong{font-size:24px}.proof-grid span{margin-top:5px;font-size:12px;line-height:1.35}.proof-note{margin:22px auto 0;font-size:16px;line-height:1.35}
+ .footer{gap:19px;padding:42px 22px}.footer a{margin:10px 0}.top{right:14px;bottom:14px;width:48px;height:48px}
+ .compact-detail{min-height:0;padding:18px 22px 26px}.compact-detail .back{margin:0 0 12px;font-size:14px}.detail-layout{gap:12px}.detail-layout h1{font-size:45px;letter-spacing:-2.3px}.detail-layout p:not(.eyebrow){font-size:16px;line-height:1.46}.detail-best{padding:12px 13px;font-size:14px}.activity-tags{max-height:100px;overflow:auto}.activity-tags span{padding:7px 9px;font-size:12px}.detail-info{margin:18px 0;font-size:13px}.compact-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.compact-actions .button{padding:14px 9px}
+ .gallery{gap:12px;margin:4px -22px 0;padding:4px 22px 13px;scroll-padding-left:22px}.gallery img{width:76vw!important;min-width:76vw!important;height:330px!important;border-radius:22px!important}
+}
+@media(max-width:390px){.buttons,.compact-actions{grid-template-columns:1fr}.hero{min-height:82svh}.proof-grid strong{font-size:22px}.gallery img{height:300px!important}}
+</style><style>
+/* Desktop center view: a single fixed canvas. The gallery scrolls sideways only. */
+@media (min-width:801px){
+  html:has(#detail.active),body:has(#detail.active){height:100%;overflow:hidden}
+  #detail.active{height:100dvh;overflow:hidden}
+  #detail.active .header{height:64px}
+  #detail.active .compact-detail{height:calc(100dvh - 64px);min-height:0;padding:16px clamp(28px,5vw,76px);overflow:hidden}
+  #detail.active .back{display:none}
+  #detail.active .detail-layout{height:100%;max-width:1460px;gap:clamp(28px,4vw,58px);align-items:center}
+  #detail.active .detail-layout>div:first-child{max-width:620px}
+  #detail.active .detail-layout h1{font-size:clamp(43px,4.5vw,70px);line-height:.95}
+  #detail.active .detail-layout p:not(.eyebrow){font-size:clamp(15px,1.25vw,18px);line-height:1.42;margin:12px 0}
+  #detail.active .detail-best{margin:12px 0;padding:11px 14px;font-size:14px}
+  #detail.active .activity-tags{gap:7px;margin:12px 0}
+  #detail.active .activity-tags span{padding:7px 10px;font-size:12px}
+  #detail.active .detail-info{margin:14px 0;font-size:13px}
+  #detail.active .compact-actions .button{padding:14px 19px}
+  #detail.active .gallery{height:100%;align-items:center;padding:0 0 7px;gap:16px;overflow-x:auto;overflow-y:hidden}
+  #detail.active .gallery img{height:calc(100dvh - 102px)!important;max-height:780px;width:clamp(360px,41vw,660px)!important;min-width:clamp(360px,41vw,660px)!important;object-fit:cover}
+}
+</style><script>
+/* V24: Satisfactory gallery keeps the real activity shots; the balloon frame is removed. */
+function finalPreviewV24(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');
+  if(!c||!gallery||id!=='satisfactory')return;
+  const activity=['satisfactory-touch.jpg','satisfactory-colour-wall.jpg','satisfactory-mirror.jpg','satisfactory-hidden-portal.jpg','satisfactory-light-tunnel.jpg','satisfactory-neon-door.jpg','satisfactory-portal.jpg','satisfactory-neon-room.jpg'];
+  gallery.innerHTML=`<img src="${c.hero}" alt="${c.name} entrance"><img src="${c.card}" alt="${c.name} interior">${activity.map((file,index)=>`<img src="assets/${file}" alt="${c.name} activity ${index+1}">`).join('')}`;
+}
+finalPreviewV24();addEventListener('hashchange',()=>setTimeout(finalPreviewV24,0));
+</script><style>
+/* The back-to-top control belongs to the long homepage only. */
+#detail.active~.top{display:none}
+
+/* A short "Live Photo"-style entrance for the parachute scene. */
+.hero{isolation:isolate;overflow:hidden;background:none!important}
+.hero:before{content:'';position:absolute;inset:-3%;z-index:0;background:url('assets/curiocity-hero-concept.png') center/cover no-repeat;will-change:transform,filter}
+.hero:after{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#081011ca,#08101166 58%,#08101112);pointer-events:none}
+.hero .copy{position:relative;z-index:1}
+@media (prefers-reduced-motion:no-preference){
+  .hero:before{animation:live-photo-moment 4.6s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes live-photo-moment{
+    0%{transform:scale(1.055) translate3d(-.8%,1.3%,0);filter:saturate(.91) brightness(.92)}
+    46%{transform:scale(1.025) translate3d(.25%,-.35%,0);filter:saturate(1.08) brightness(1.04)}
+    100%{transform:scale(1.035) translate3d(0,0,0);filter:saturate(1) brightness(1)}
+  }
+}
+</style><script>
+/* V25: Satisfactory — only verified space/installations. No people or promotional frames. */
+function finalPreviewV25(){
+  const id=location.hash.split('/')[1],c=centers.find(x=>x.id===id),gallery=document.querySelector('#detail .gallery');
+  if(!c||!gallery||id!=='satisfactory')return;
+  const verified=['satisfactory-touch.jpg','satisfactory-light-tunnel.jpg'];
+  gallery.innerHTML=`<img src="${c.hero}" alt="${c.name} neon interior"><img src="${c.card}" alt="${c.name} entrance">${verified.map((file,index)=>`<img src="assets/${file}" alt="${c.name} installation ${index+1}">`).join('')}`;
+}
+finalPreviewV25();addEventListener('hashchange',()=>setTimeout(finalPreviewV25,0));
+</script><style>
+/* Staggered entrance for the homepage: header, copy and CTAs arrive in sequence. */
+@media (prefers-reduced-motion:no-preference){
+  #home>.header .brand,#home>.header .nav,#home .hero .eyebrow,#home .hero h1,#home .hero p:not(.eyebrow),#home .hero .buttons{opacity:0;animation:home-enter .72s cubic-bezier(.2,.8,.2,1) forwards}
+  #home>.header .brand{animation-delay:.08s}#home>.header .nav{animation-delay:.16s}
+  #home .hero .eyebrow{animation-delay:.34s}#home .hero h1{animation-delay:.46s}
+  #home .hero p:not(.eyebrow){animation-delay:.60s}#home .hero .buttons{animation-delay:.76s}
+  @keyframes home-enter{from{opacity:0;transform:translateY(18px);filter:blur(7px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+}
+</style><style>
+/* Homepage hero: selected construction-world visual. */
+.hero:before{background-image:url('assets/curiocity-hero-construction.png')}
+</style><style>
+/* Floating glass navigation — intentionally separate from the hero, like a soft system control. */
+#home>.header{
+  position:fixed;top:16px;left:clamp(16px,3vw,52px);right:clamp(16px,3vw,52px);z-index:20;
+  height:68px;padding:0 14px 0 21px;border:1px solid rgba(255,255,255,.7);border-radius:25px;
+  background:linear-gradient(120deg,rgba(255,253,249,.78),rgba(255,250,244,.53));
+  box-shadow:0 14px 34px rgba(32,25,13,.18),inset 0 1px 0 rgba(255,255,255,.9);
+  -webkit-backdrop-filter:blur(25px) saturate(1.35);backdrop-filter:blur(25px) saturate(1.35);
+}
+#home>.header .brand{font-size:23px}
+#home>.header .nav{gap:5px;padding:5px;border-radius:999px;background:rgba(255,255,255,.31);border:1px solid rgba(255,255,255,.5)}
+#home>.header .nav>a:not(.contact){padding:10px 14px;border-radius:999px;transition:background .22s ease,color .22s ease,transform .22s ease}
+#home>.header .nav>a:not(.contact):hover{background:rgba(255,255,255,.82);color:var(--ink);transform:translateY(-1px)}
+#home>.header .nav .contact{position:relative;overflow:hidden;padding:12px 19px;border:1px solid rgba(255,255,255,.38);background:linear-gradient(135deg,#128083,#0d6e7d);box-shadow:0 7px 16px rgba(9,87,97,.2)}
+#home>.header .nav .contact:before{content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.34) 49%,transparent 64%);transform:translateX(-120%);transition:transform .55s ease}
+#home>.header .nav .contact:hover:before{transform:translateX(120%)}
+#home .hero{border-radius:0 0 44px 44px;overflow:hidden}
+@media(max-width:650px){
+  #home>.header{top:9px;left:10px;right:10px;height:57px;padding:0 9px 0 14px;border-radius:20px}
+  #home>.header .brand{font-size:19px;gap:5px}#home>.header .star{font-size:23px}#home>.header .brand small{display:none}
+  #home>.header .nav{gap:1px;padding:2px;border:0;background:transparent}
+  #home>.header .nav>a:not(.contact){padding:8px 9px;font-size:12px}
+  #home>.header .nav .contact{padding:9px 11px;font-size:12px}
+  #home .hero{border-radius:0 0 28px 28px}
+}
+</style><style>
+/* The center pages use the same floating-glass navigation treatment. */
+#detail.active>.header{
+  position:absolute;top:16px;left:clamp(16px,3vw,52px);right:clamp(16px,3vw,52px);z-index:20;
+  height:68px;padding:0 14px 0 21px;border:1px solid rgba(255,255,255,.72);border-radius:25px;
+  background:linear-gradient(120deg,rgba(255,253,249,.80),rgba(255,250,244,.55));
+  box-shadow:0 14px 34px rgba(32,25,13,.16),inset 0 1px 0 rgba(255,255,255,.9);
+  -webkit-backdrop-filter:blur(25px) saturate(1.35);backdrop-filter:blur(25px) saturate(1.35);
+}
+#detail.active>.header .brand{font-size:23px}
+#detail.active>.header .nav{gap:5px;padding:5px;border-radius:999px;background:rgba(255,255,255,.31);border:1px solid rgba(255,255,255,.5)}
+#detail.active>.header .nav>a{padding:10px 14px;border-radius:999px;transition:background .22s ease,color .22s ease,transform .22s ease}
+#detail.active>.header .nav>a:hover{background:rgba(255,255,255,.82);color:var(--ink);transform:translateY(-1px)}
+@media(min-width:801px){
+  #detail.active .compact-detail{height:100dvh;padding-top:96px}
+  #detail.active .gallery img{height:calc(100dvh - 134px)!important}
+}
+@media(max-width:650px){
+  #detail.active>.header{position:sticky;top:9px;left:auto;right:auto;margin:9px 10px 0;height:57px;padding:0 14px;border-radius:20px}
+  #detail.active>.header .brand{font-size:19px;gap:5px}#detail.active>.header .star{font-size:23px}#detail.active>.header .brand small{display:none}
+  #detail.active>.header .nav{gap:1px;padding:2px;border:0;background:transparent}
+  #detail.active>.header .nav>a{padding:8px 9px;font-size:12px}
+}
+</style><style>
+/* A deliberate hero-to-centers transition: less empty canvas, more editorial flow. */
+#centers.section{
+  position:relative;z-index:2;margin-top:-40px;padding-top:84px;border-radius:44px 44px 0 0;
+  background:linear-gradient(112deg,rgba(242,250,248,.98),rgba(255,251,246,.98))!important;
+  box-shadow:0 -1px 0 rgba(255,255,255,.72),0 -18px 42px rgba(28,51,47,.09);
+  scroll-margin-top:104px;
+}
+#centers .head{max-width:1260px;margin-bottom:39px}
+#centers .head h2{font-size:clamp(46px,5vw,74px);line-height:.98;text-wrap:balance}
+#centers .head>p:last-child{max-width:760px;margin:18px auto 0;line-height:1.45}
+@media(max-width:650px){
+  #centers.section{margin-top:-22px;padding:59px 0 50px;border-radius:28px 28px 0 0;scroll-margin-top:75px}
+  #centers .head{margin-bottom:25px}
+  #centers .head h2{font-size:clamp(35px,10vw,47px);line-height:1.01}
+}
+</style><script>
+/* Hash routing: “Our Centers” from a branch lands directly on the center cards. */
+function routeToCenters(){
+  if(location.hash!=='#centers')return;
+  const home=document.querySelector('#home'),detail=document.querySelector('#detail'),target=document.querySelector('#centers');
+  if(!home||!detail||!target)return;
+  home.style.display='block';detail.className='detail';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>target.scrollIntoView({block:'start',behavior:'auto'})));
+}
+addEventListener('hashchange',routeToCenters);
+routeToCenters();
+</script><style>
+/* Center brand badges: clean vector-like interpretations of the supplied venue marks. */
+.card .photo{isolation:isolate}.center-brand{position:absolute;top:15px;left:15px;z-index:2;display:inline-flex;align-items:center;gap:9px;min-height:45px;padding:7px 12px 7px 8px;border:1px solid rgba(255,255,255,.7);border-radius:16px;background:rgba(255,253,249,.82);box-shadow:0 9px 22px rgba(20,25,31,.15),inset 0 1px 0 rgba(255,255,255,.9);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);color:#151318}
+.center-brand .logo-name{font:900 11px/.86 Outfit;letter-spacing:.35px;white-space:nowrap}.center-brand .logo-name small{display:block;margin-top:3px;color:#6d716f;font:800 7px/1 Nunito Sans;letter-spacing:1.2px}.center-brand .logo-mark{position:relative;display:grid;place-items:center;width:29px;height:29px;flex:0 0 29px;border-radius:10px;overflow:hidden}.center-brand.imagination .logo-mark{background:linear-gradient(145deg,#ffb16b,#ff7264)}.center-brand.imagination .logo-mark:before,.center-brand.imagination .logo-mark:after{content:'';position:absolute;background:#fffdf9;border-radius:2px}.center-brand.imagination .logo-mark:before{width:15px;height:4px;transform:rotate(45deg)}.center-brand.imagination .logo-mark:after{width:4px;height:15px;transform:rotate(45deg)}
+.center-brand.play .logo-mark{background:#5b3c30}.center-brand.play .logo-mark:before{content:'';width:17px;height:13px;background:linear-gradient(90deg,#f4c979 0 26%,transparent 26% 36%,#f4c979 36% 62%,transparent 62% 72%,#f4c979 72%);clip-path:polygon(0 35%,20% 35%,20% 0,36% 0,36% 35%,64% 35%,64% 0,80% 0,80% 35%,100% 35%,100% 100%,0 100%)}
+.center-brand.sandbox .logo-mark{background:#24231f;border-radius:8px}.center-brand.sandbox .logo-mark:before{content:'';width:16px;height:14px;background:#ff7b5a;clip-path:polygon(0 0,35% 0,35% 35%,65% 35%,65% 0,100% 0,100% 100%,0 100%)}
+.center-brand.satisfactory .logo-mark{background:#101116}.center-brand.satisfactory .logo-mark i{position:absolute;width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,#5effa5,#42a7ff)}.center-brand.satisfactory .logo-mark i:nth-child(1){left:4px;top:4px}.center-brand.satisfactory .logo-mark i:nth-child(2){right:4px;top:6px;background:linear-gradient(135deg,#8a68ff,#f45bd2)}.center-brand.satisfactory .logo-mark i:nth-child(3){left:10px;bottom:4px;background:linear-gradient(135deg,#eaff62,#ff7866)}
+.center-brand.imagination{--brand:#fb765b}.center-brand.play{--brand:#b98232}.center-brand.sandbox{--brand:#ee794e}.center-brand.satisfactory{--brand:#805cff}.center-brand .logo-name b{color:var(--brand)}
+@media(max-width:650px){.center-brand{top:12px;left:12px;min-height:40px;padding:6px 10px 6px 7px;border-radius:14px}.center-brand .logo-mark{width:27px;height:27px;flex-basis:27px}.center-brand .logo-name{font-size:10px}.center-brand .logo-name small{font-size:6px}}
+</style><script>
+/* Keep brand marks attached even after the card grid is rebuilt by the preview scripts. */
+const centerLogoMarkup={
+  imagination:'<span class="logo-mark"></span><span class="logo-name">IMAGINATION<b> STATION</b><small>CURIOCITY GROUP</small></span>',
+  play:'<span class="logo-mark"></span><span class="logo-name">CENTER<b> OF PLAY</b><small>CURIOCITY GROUP</small></span>',
+  sandbox:'<span class="logo-mark"></span><span class="logo-name">SANDBOX<small>CURIOCITY GROUP</small></span>',
+  satisfactory:'<span class="logo-mark"><i></i><i></i><i></i></span><span class="logo-name">SATIS<b>FACTORY</b><small>CURIOCITY GROUP</small></span>'
+};
+function addCenterBrandMarks(){
+  document.querySelectorAll('#cards .card').forEach(card=>{
+    const href=card.querySelector('a')?.getAttribute('href')||'',id=href.split('/')[1],photo=card.querySelector('.photo');
+    if(!id||!photo||photo.querySelector('.center-brand'))return;
+    photo.insertAdjacentHTML('afterbegin',`<div class="center-brand ${id}">${centerLogoMarkup[id]||''}</div>`);
+  });
+}
+addCenterBrandMarks();addEventListener('hashchange',()=>setTimeout(addCenterBrandMarks,0));
+</script><style>
+/* Cards carry only the mark; the center name remains the primary card title. */
+.center-brand{min-width:45px;padding:7px;gap:0}.center-brand .logo-name{display:none}
+
+/* Four venue marks in the main glass bar, as a quiet brand family rather than repeated titles. */
+#home>.header .header-logo-rail{display:flex;align-items:center;gap:7px;margin-left:auto;margin-right:auto;padding:5px 7px;border:1px solid rgba(255,255,255,.48);border-radius:999px;background:rgba(255,255,255,.24)}
+#home>.header .header-center-logo{position:relative;top:auto;left:auto;display:grid;place-items:center;min-width:0;min-height:0;width:37px;height:37px;padding:4px;border-radius:13px;background:rgba(255,253,249,.72);box-shadow:0 5px 12px rgba(27,30,31,.11),inset 0 1px 0 rgba(255,255,255,.92);transition:transform .22s ease,background .22s ease}
+#home>.header .header-center-logo:hover{transform:translateY(-2px) scale(1.05);background:#fffdfa}
+#home>.header .header-center-logo .logo-mark{width:27px;height:27px;flex-basis:27px}
+#home>.header .header-center-logo.satisfactory .logo-mark i{width:8px;height:8px}
+@media(max-width:950px){#home>.header .header-logo-rail{gap:4px;padding:4px}#home>.header .header-center-logo{width:32px;height:32px;padding:3px;border-radius:11px}#home>.header .header-center-logo .logo-mark{width:24px;height:24px;flex-basis:24px}}
+@media(max-width:650px){#home>.header .header-logo-rail{display:none}}
+</style><script>
+function addHeaderLogoRail(){
+  const header=document.querySelector('#home>.header'),brand=header?.querySelector('.brand');
+  if(!header||!brand||header.querySelector('.header-logo-rail'))return;
+  const markOnly={imagination:'<span class="logo-mark"></span>',play:'<span class="logo-mark"></span>',sandbox:'<span class="logo-mark"></span>',satisfactory:'<span class="logo-mark"><i></i><i></i><i></i></span>'};
+  const marks=['imagination','play','sandbox','satisfactory'].map(id=>`<span class="center-brand header-center-logo ${id}">${markOnly[id]}</span>`).join('');
+  brand.insertAdjacentHTML('afterend',`<div class="header-logo-rail" aria-label="CurioCITY Group centers">${marks}</div>`);
+}
+addHeaderLogoRail();addEventListener('hashchange',()=>setTimeout(addHeaderLogoRail,0));
+</script><style>
+/* Final header-logo placement: a static inline family of marks, level with the Group logo. */
+#home>.header{justify-content:flex-start}
+#home>.header .header-logo-rail{margin-left:19px;margin-right:0;padding:0;gap:9px;border:0;border-radius:0;background:transparent}
+#home>.header .header-center-logo{width:28px;height:28px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;cursor:default;pointer-events:none;transition:none}
+#home>.header .header-center-logo:hover{transform:none;background:transparent}
+#home>.header .header-center-logo .logo-mark{width:27px;height:27px;flex-basis:27px;border-radius:9px}
+#home>.header .nav{margin-left:auto}
+@media(max-width:950px){#home>.header .header-logo-rail{margin-left:13px;gap:6px}#home>.header .header-center-logo{width:25px;height:25px}#home>.header .header-center-logo .logo-mark{width:24px;height:24px;flex-basis:24px}}
+</style><style>
+/* Alternative logo treatment: open line marks — no tiles, borders or boxes. */
+#home>.header .header-logo-rail{gap:11px}
+#home>.header .header-center-logo,#home>.header .header-center-logo .logo-mark{width:25px;height:25px;min-width:25px;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible}
+#home>.header .header-center-logo .logo-mark:after{display:none}
+#home>.header .header-center-logo .logo-mark:before{position:static;display:block;width:auto;height:auto;background:none;transform:none;clip-path:none!important;font:800 27px/25px Outfit;letter-spacing:0}
+#home>.header .header-center-logo.imagination .logo-mark:before{content:'✦';color:#fb765b}
+#home>.header .header-center-logo.play .logo-mark:before{content:'⌘';color:#b98232;font-size:29px}
+#home>.header .header-center-logo.sandbox .logo-mark:before{content:'◒';color:#ef754f;font-size:31px}
+#home>.header .header-center-logo.satisfactory .logo-mark{display:block;position:relative}
+#home>.header .header-center-logo.satisfactory .logo-mark i{width:8px;height:8px;box-shadow:none;border:0}
+#home>.header .header-center-logo.satisfactory .logo-mark i:nth-child(1){left:0;top:2px}.header-center-logo.satisfactory .logo-mark i:nth-child(2){right:0;top:3px}.header-center-logo.satisfactory .logo-mark i:nth-child(3){left:8px;bottom:0}
+@media(max-width:950px){#home>.header .header-logo-rail{gap:8px}#home>.header .header-center-logo,#home>.header .header-center-logo .logo-mark{width:22px;height:22px;min-width:22px}#home>.header .header-center-logo .logo-mark:before{font-size:24px;line-height:22px}}
+</style><style>
+/* Venue identities: actual emblem-inspired marks, not generic interface glyphs. */
+.center-brand.real-venue-mark,.center-brand.real-venue-mark .logo-mark,
+#home>.header .header-center-logo.real-venue-mark,
+#home>.header .header-center-logo.real-venue-mark .logo-mark{
+  background:transparent!important;border:0!important;box-shadow:none!important;
+  border-radius:0!important;overflow:visible!important;
+}
+.center-brand.real-venue-mark{padding:0!important;min-width:0!important;min-height:0!important;display:block!important}
+.center-brand.real-venue-mark .logo-mark{display:block!important;position:relative!important;width:45px!important;height:45px!important;flex:0 0 45px!important}
+.center-brand.real-venue-mark .logo-mark:before,.center-brand.real-venue-mark .logo-mark:after,
+#home>.header .header-center-logo.real-venue-mark .logo-mark:before,
+#home>.header .header-center-logo.real-venue-mark .logo-mark:after{display:none!important;content:none!important}
+.center-brand.real-venue-mark .logo-mark i{display:none!important}
+.center-brand.real-venue-mark .logo-mark img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 7px rgba(19,26,30,.18))}
+#home>.header .header-logo-rail{gap:13px!important;margin-left:20px!important}
+#home>.header .header-center-logo.real-venue-mark{width:31px!important;height:31px!important;min-width:31px!important;pointer-events:none!important}
+#home>.header .header-center-logo.real-venue-mark .logo-mark{width:31px!important;height:31px!important;min-width:31px!important;flex-basis:31px!important}
+#home>.header .header-center-logo.real-venue-mark .logo-mark img{filter:drop-shadow(0 2px 3px rgba(19,26,30,.15))}
+@media(max-width:950px){
+  #home>.header .header-logo-rail{gap:8px!important;margin-left:13px!important}
+  #home>.header .header-center-logo.real-venue-mark,#home>.header .header-center-logo.real-venue-mark .logo-mark{width:25px!important;height:25px!important;min-width:25px!important;flex-basis:25px!important}
+  .center-brand.real-venue-mark .logo-mark{width:40px!important;height:40px!important;flex-basis:40px!important}
+}
+</style><script>
+/* Swap the earlier placeholder glyphs for clean marks based on the supplied venue logo references. */
+const realVenueMarks={
+  imagination:'assets/brand-imagination-v1.png',
+  play:'assets/brand-center-of-play-v1.png',
+  sandbox:'assets/brand-sandbox-v1.png',
+  satisfactory:'assets/brand-satisfactory-v1.png'
+};
+function applyRealVenueMarks(){
+  document.querySelectorAll('.center-brand').forEach(el=>{
+    const id=Object.keys(realVenueMarks).find(key=>el.classList.contains(key));
+    const mark=el.querySelector('.logo-mark');
+    if(!id||!mark||mark.dataset.realVenueMark===id)return;
+    el.classList.add('real-venue-mark');
+    mark.dataset.realVenueMark=id;
+    mark.innerHTML=`<img src="${realVenueMarks[id]}" alt="" aria-hidden="true">`;
+  });
+}
+applyRealVenueMarks();
+addEventListener('hashchange',()=>setTimeout(applyRealVenueMarks,0));
+new MutationObserver(()=>applyRealVenueMarks()).observe(document.body,{childList:true,subtree:true});
+</script><style>
+/* Brand constellation: four native, transparent SVG marks shaped from the supplied venue identities. */
+.center-brand.real-venue-mark .logo-mark svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 3px 6px rgba(25,30,34,.14))}
+.center-brand.real-venue-mark .logo-mark img{display:none!important}
+#home>.header .header-logo-rail{position:relative;gap:15px!important;background:transparent!important}
+#home>.header .header-logo-rail:before{display:none!important}
+#home>.header .header-center-logo.real-venue-mark{width:34px!important;height:34px!important;min-width:34px!important}
+#home>.header .header-center-logo.real-venue-mark .logo-mark{width:34px!important;height:34px!important;min-width:34px!important;flex-basis:34px!important}
+#cards .center-brand.real-venue-mark .logo-mark{width:49px!important;height:49px!important;flex-basis:49px!important}
+@media(max-width:950px){
+  #home>.header .header-logo-rail{gap:9px!important}
+  #home>.header .header-center-logo.real-venue-mark,#home>.header .header-center-logo.real-venue-mark .logo-mark{width:27px!important;height:27px!important;min-width:27px!important;flex-basis:27px!important}
+}
+</style><script>
+/* Deliberately text-free: each mark takes its visual language from its real venue logo. */
+const venueSvgMarks={
+ imagination:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 44 25 31l12 10 20-18" stroke="#28354e" stroke-width="3" opacity=".33"/><g fill="#e48752" stroke="#28354e" stroke-width="2"><path d="m13 48 3-4-1-5 5-2 3-4 4 3 5-1 1 5 4 3-3 4 1 5-5 1-3 4-4-3-5 1-1-5z"/><path d="m33 31 3-5-1-5 5-2 3-4 4 3 5-1 1 5 4 3-3 4 1 5-5 1-3 4-4-3-5 1-1-5z"/></g><circle cx="24" cy="44" r="5" fill="#f5bf6c" stroke="#28354e" stroke-width="2"/><circle cx="44" cy="28" r="6" fill="#f5bf6c" stroke="#28354e" stroke-width="2"/><path d="M44 24v8m-4-4h8M20 44h8" stroke="#28354e" stroke-width="2.5"/></g></svg>`,
+ play:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10 60h52" stroke="#5b372c" stroke-width="3.5"/><path d="M14 57V21m44 36V21" stroke="#5b372c" stroke-width="3.8"/><path d="m7 25 7-7 7 7m30 0 7-7 7 7M14 32l-7-5m7 10 8-5m36 0 7-5m-7 10-8-5" stroke="#b58138" stroke-width="3.6"/><path d="M23 59V42h12v17m3 0V31h11v28" stroke="#5b372c" stroke-width="4"/><path d="M27 46h4m11-10h4" stroke="#e2b85e" stroke-width="3"/><path d="m30 36 4-5 4 5" stroke="#e2b85e" stroke-width="3"/></g></svg>`,
+ sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M12 28h48v30a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6Z" fill="#1a1b1a"/><path d="M15 23h42v9H15z" fill="#1a1b1a"/><path d="M19 18h34l5 10H14z" fill="#1a1b1a"/><path d="M19 23h8v8h-8zm13 0h8v8h-8zm13 0h8v8h-8z" fill="#ff7655"/><circle cx="27" cy="46" r="7" fill="#ff7655"/><path d="m46 38 8 15H38z" fill="#ff8a65"/><rect x="20" y="55" width="14" height="7" rx="2" fill="#ff7655"/><path d="M42 62v-9a7 7 0 0 1 14 0v9Z" fill="#ff7655"/></svg>`,
+ satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="satis-a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#49dfff"/><stop offset="1" stop-color="#7859ff"/></linearGradient><linearGradient id="satis-b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b9f65e"/><stop offset="1" stop-color="#ff6f8e"/></linearGradient></defs><circle cx="17" cy="17" r="8" fill="url(#satis-a)"/><circle cx="55" cy="17" r="8" fill="#8059f2"/><path d="M17 49c0-9 9-17 18-17s16 7 16 15-7 14-15 14-10-7-18-7c-4 0-7-2-7-5 0-2 2-4 6-4Z" fill="url(#satis-b)"/><circle cx="30" cy="53" r="7" fill="#d7f45d"/><circle cx="56" cy="54" r="8" fill="url(#satis-a)"/></svg>`
+};
+function applyNativeVenueMarks(){
+  document.querySelectorAll('.center-brand').forEach(el=>{
+    const id=Object.keys(venueSvgMarks).find(key=>el.classList.contains(key));
+    const mark=el.querySelector('.logo-mark');
+    if(!id||!mark||mark.dataset.nativeVenue===id)return;
+    el.classList.add('real-venue-mark');
+    mark.dataset.nativeVenue=id;
+    mark.innerHTML=venueSvgMarks[id];
+  });
+}
+applyNativeVenueMarks();
+addEventListener('hashchange',()=>setTimeout(applyNativeVenueMarks,0));
+new MutationObserver(()=>applyNativeVenueMarks()).observe(document.body,{childList:true,subtree:true});
+</script><style>
+/* Logo facelift: no UI ornaments, only four bold original symbols. */
+.center-brand.real-venue-mark .logo-mark svg{filter:none!important}
+#home>.header .header-logo-rail{gap:12px!important;margin-left:17px!important}
+</style><script>
+Object.assign(venueSvgMarks,{
+  imagination:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="#ee835d"><path d="m12 44 4-3-1-6 6-1 3-5 5 3 5-2 2 6 5 3-4 5 1 6-6 1-3 5-5-3-5 2-2-6z"/><path d="m34 27 3-4-1-5 5-1 3-5 5 3 5-2 2 5 5 3-4 5 1 5-5 1-3 5-5-3-5 2-2-5z"/></g><circle cx="25" cy="42" r="7" fill="#f7c96c"/><circle cx="46" cy="25" r="7" fill="#f7c96c"/><path d="M25 37v10m-5-5h10M46 20v10m-5-5h10" stroke="#374055" stroke-width="3" stroke-linecap="round"/></svg>`,
+  play:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M9 59h54" stroke="#5c392e" stroke-width="4" stroke-linecap="round"/><path d="M15 58V24m42 34V24" stroke="#5c392e" stroke-width="5" stroke-linecap="round"/><path d="m8 27 7-8 7 8m28 0 7-8 7 8M15 34l-8-5m8 10 8-5m34 0 8-5m-8 10-8-5" stroke="#c89741" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 58V43a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v15m4 0V31a4 4 0 0 1 4-4h5a4 4 0 0 1 4 4v27" fill="#b88945"/><path d="M27 46h5m12-11h5" stroke="#f6d379" stroke-width="3" stroke-linecap="round"/></svg>`,
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M13 27h46v31a6 6 0 0 1-6 6H19a6 6 0 0 1-6-6Z" fill="#1d1b1a"/><path d="M17 19h38l5 10H12z" fill="#1d1b1a"/><path d="M15 25h42v8H15z" fill="#1d1b1a"/><path d="M20 25h7v8h-7zm13 0h7v8h-7zm13 0h7v8h-7z" fill="#ff7756"/><circle cx="27" cy="46" r="7" fill="#ff7756"/><path d="m46 38 9 16H37z" fill="#ff7756"/><rect x="20" y="55" width="15" height="7" rx="3" fill="#ff7756"/><path d="M42 62v-8a7 7 0 0 1 14 0v8Z" fill="#ff7756"/></svg>`,
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="next-satis-a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#36e3e3"/><stop offset="1" stop-color="#7a56ff"/></linearGradient><linearGradient id="next-satis-b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a9f65f"/><stop offset="1" stop-color="#fb618e"/></linearGradient></defs><circle cx="18" cy="18" r="8" fill="url(#next-satis-a)"/><circle cx="54" cy="18" r="8" fill="#8e5df5"/><path d="M16 44c0-9 8-16 17-16 8 0 14 6 15 13 1 5-3 10-9 10-7 0-11-7-17-7-4 0-6 2-6 0Z" fill="url(#next-satis-b)"/><path d="M33 56c0-8 7-15 15-15 7 0 12 5 12 11s-5 11-11 11c-7 0-10-7-16-7Z" fill="url(#next-satis-b)"/><circle cx="23" cy="56" r="7" fill="#d8f55c"/><circle cx="58" cy="57" r="7" fill="url(#next-satis-a)"/></svg>`
+});
+document.querySelectorAll('.center-brand .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><style>
+/* Soft-loft / Macintosh pass: bare logo marks, never badges or buttons. */
+#home>.header .header-logo-rail{gap:14px!important;margin-left:19px!important}
+#home>.header .header-center-logo.real-venue-mark,#home>.header .header-center-logo.real-venue-mark .logo-mark{width:36px!important;height:36px!important;min-width:36px!important;flex-basis:36px!important}
+#cards .center-brand.real-venue-mark .logo-mark{width:52px!important;height:52px!important;flex-basis:52px!important}
+@media(max-width:950px){#home>.header .header-center-logo.real-venue-mark,#home>.header .header-center-logo.real-venue-mark .logo-mark{width:27px!important;height:27px!important;min-width:27px!important;flex-basis:27px!important}}
+</style><script>
+/* The four marks are logo redraws: palm-and-block crest, creative gears, sand house, and sensory droplets. */
+Object.assign(venueSvgMarks,{
+  play:`<svg viewBox="0 0 72 72" aria-hidden="true"><g stroke-linecap="round" stroke-linejoin="round"><path d="M12 61h48" stroke="#60483c" stroke-width="3.5"/><path d="M17 58V27m38 31V27" stroke="#60483c" stroke-width="4"/><path d="M8 30 17 20l9 10M46 30l9-10 9 10" fill="none" stroke="#b98f5a" stroke-width="4"/><path d="M17 38 9 33m8 9 9-5m29 1 8-5m-8 9-9-5" fill="none" stroke="#b98f5a" stroke-width="3.5"/><rect x="25" y="43" width="12" height="15" rx="3" fill="#684c3d"/><rect x="39" y="34" width="11" height="24" rx="3" fill="#684c3d"/><path d="M28 47h6m8-9h5" stroke="#e8c785" stroke-width="3"/></g></svg>`,
+  imagination:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="#d77b59"><path d="M12 45c-3-2-3-6 0-8l3-2-1-4c-1-4 2-6 5-5l4 1 2-4c2-3 6-3 8 0l2 4 4-1c4-1 6 2 5 5l-1 4 3 2c3 2 3 6 0 8l-3 2 1 4c1 4-2 6-5 5l-4-1-2 4c-2 3-6 3-8 0l-2-4-4 1c-4 1-6-2-5-5l1-4z"/><path d="M39 27c-2-1-2-5 0-6l3-2-1-3c-1-3 1-5 4-4l3 1 2-3c1-2 5-2 6 0l2 3 3-1c3-1 5 1 4 4l-1 3 3 2c2 1 2 5 0 6l-3 2 1 3c1 3-1 5-4 4l-3-1-2 3c-1 2-5 2-6 0l-2-3-3 1c-3 1-5-1-4-4l1-3z" fill="#efad71"/></g><circle cx="27" cy="41" r="7" fill="#fff4d9"/><circle cx="52" cy="22" r="5.5" fill="#fff4d9"/><path d="M27 36v10m-5-5h10M49 22h6" stroke="#624d4b" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M13 29h46v29a7 7 0 0 1-7 7H20a7 7 0 0 1-7-7Z" fill="#31302d"/><path d="M16 21h40l5 11H11z" fill="#31302d"/><rect x="15" y="25" width="42" height="8" rx="2.5" fill="#31302d"/><g fill="#ee8064"><rect x="20" y="25" width="7" height="8" rx="1.5"/><rect x="33" y="25" width="7" height="8" rx="1.5"/><rect x="46" y="25" width="7" height="8" rx="1.5"/><circle cx="27" cy="47" r="7"/><path d="m47 39 8 15H39z"/><rect x="20" y="56" width="15" height="7" rx="3"/><path d="M42 63v-8a7 7 0 0 1 14 0v8Z"/></g></svg>`,
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="mac-a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#58d8df"/><stop offset="1" stop-color="#8b71e8"/></linearGradient><linearGradient id="mac-b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8e979"/><stop offset="1" stop-color="#ee7593"/></linearGradient></defs><circle cx="18" cy="18" r="8" fill="url(#mac-a)"/><circle cx="55" cy="18" r="8" fill="#9576df"/><path d="M17 46c0-9 8-16 17-16 8 0 14 6 14 13 0 6-5 10-11 10-7 0-10-7-17-7-3 0-3 0-3 0Z" fill="url(#mac-b)"/><path d="M34 56c0-8 7-15 15-15 7 0 11 5 11 11s-5 10-11 10c-7 0-9-6-15-6Z" fill="url(#mac-b)"/><circle cx="23" cy="56" r="7" fill="#dbe87c"/><circle cx="58" cy="56" r="7" fill="url(#mac-a)"/></svg>`
+});
+document.querySelectorAll('.center-brand .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><style>
+/* Final mark system: the same reduction principle as classic logo evolution — fewer forms, stronger memory. */
+#home>.header .header-logo-rail{gap:13px!important}
+.center-brand.real-venue-mark .logo-mark svg{filter:none!important}
+</style><script>
+Object.assign(venueSvgMarks,{
+  /* Imagination Station: the many gears become one warm imaginative gear and a single discovery spark. */
+  imagination:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="m36 8 5 8 9-2 2 9 9 3-3 9 6 7-7 6 1 10-10 1-4 8-8-5-8 5-4-8-10-1 1-10-7-6 6-7-3-9 9-3 2-9 9 2z" fill="#e9805e"/><circle cx="36" cy="36" r="13" fill="#f8ca77"/><path d="m36 25 3.2 7.7L47 36l-7.8 3.3L36 47l-3.2-7.7L25 36l7.8-3.3z" fill="#5b4652"/></svg>`,
+  /* Center of Play: the original palms and building reduce to a tiny welcoming landmark. */
+  play:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="#5f4032"><path d="M12 61h48v4H12z"/><path d="M16 60V23h4v37zm36 0V23h4v37z"/><path d="M25 39h10v22H25zm13-12h10v34H38z"/></g><g fill="#d4a65c"><path d="m9 25 9-10 9 10-9-4zM45 25l9-10 9 10-9-4z"/><path d="M27 44h6v6h-6zm13-12h6v6h-6z"/></g></svg>`,
+  /* Sandbox: the original dark construction-house and four coral play forms. */
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M12 25h48v39H12z" fill="#252322"/><path d="M18 13h36l8 14H10z" fill="#252322"/><path d="M16 23h40v7H16z" fill="#252322"/><g fill="#f17b5d"><circle cx="26" cy="43" r="7"/><path d="m45 35 9 16H36z"/><rect x="20" y="54" width="14" height="7" rx="2"/><path d="M42 61v-9a7 7 0 0 1 14 0v9z"/></g></svg>`,
+  /* Satisfactory: its original sensory molecules become two fluid capsules and five bright dots. */
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="final-a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#50dced"/><stop offset="1" stop-color="#8563ee"/></linearGradient><linearGradient id="final-b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9eed68"/><stop offset="1" stop-color="#ef6b93"/></linearGradient></defs><circle cx="17" cy="17" r="8" fill="url(#final-a)"/><circle cx="55" cy="17" r="8" fill="#9069e6"/><path d="M14 46c0-8 7-14 15-14 9 0 14 6 14 12s-5 11-12 11c-7 0-10-7-17-7z" fill="url(#final-b)"/><path d="M34 55c0-8 7-14 15-14 8 0 13 5 13 11s-5 10-11 10c-7 0-10-7-17-7z" fill="url(#final-b)"/><circle cx="22" cy="56" r="7" fill="#d8f06d"/><circle cx="58" cy="56" r="7" fill="url(#final-a)"/></svg>`
+});
+document.querySelectorAll('.center-brand .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><style>
+/* Absolutely no logo backing — the emblems sit directly in the header like the CurioCITY wordmark. */
+#home>.header .header-logo-rail,#home>.header .header-center-logo,#home>.header .header-center-logo .logo-mark,
+#cards .center-brand,#cards .center-brand .logo-mark{background:none!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+#home>.header .header-logo-rail{padding:0!important;gap:14px!important}
+</style><script>
+/* Variant 2 — warmer, softer and more distilled: each symbol keeps one unmistakable cue from its original logo. */
+Object.assign(venueSvgMarks,{
+  imagination:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="#ed8b68"><circle cx="26" cy="41" r="15"/><circle cx="47" cy="24" r="12"/><rect x="10" y="38" width="12" height="6" rx="3"/><rect x="30" y="56" width="6" height="12" rx="3"/><rect x="21" y="20" width="6" height="12" rx="3"/><rect x="42" y="8" width="6" height="10" rx="3"/><rect x="53" y="20" width="11" height="6" rx="3"/><rect x="55" y="32" width="6" height="10" rx="3"/></g><circle cx="26" cy="41" r="7" fill="#fff5df"/><path d="m47 15 2.5 6.5L56 24l-6.5 2.5L47 33l-2.5-6.5L38 24l6.5-2.5z" fill="#f6c96f"/></svg>`,
+  play:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="#604438"><rect x="14" y="49" width="44" height="11" rx="4"/><rect x="24" y="32" width="12" height="17" rx="4"/><rect x="38" y="24" width="12" height="25" rx="4"/><rect x="16" y="57" width="40" height="5" rx="2.5"/></g><g fill="#d8ad64"><path d="M17 46V22l-7 6 7-14 7 14-7-6v24zM55 46V22l-7 6 7-14 7 14-7-6v24z"/><rect x="27" y="36" width="6" height="6" rx="2"/><rect x="41" y="28" width="6" height="6" rx="2"/></g></svg>`,
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M13 25 21 14h30l8 11v37a4 4 0 0 1-4 4H17a4 4 0 0 1-4-4Z" fill="#2d2b29"/><path d="M16 25h40v8H16z" fill="#2d2b29"/><g fill="#f38262"><circle cx="27" cy="46" r="7"/><path d="m46 38 9 16H37z"/><rect x="20" y="56" width="14" height="7" rx="3"/><path d="M43 63v-8a7 7 0 0 1 14 0v8Z"/></g></svg>`,
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="variant-a" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#58dfe5"/><stop offset="1" stop-color="#8668ea"/></linearGradient><linearGradient id="variant-b" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#b9ef6d"/><stop offset="1" stop-color="#f17894"/></linearGradient></defs><circle cx="16" cy="17" r="8" fill="url(#variant-a)"/><circle cx="55" cy="17" r="8" fill="#8d6be5"/><path d="M15 44c0-9 8-16 17-16 8 0 13 5 13 12s-5 11-12 11c-7 0-9-7-17-7Z" fill="url(#variant-b)"/><path d="M35 55c0-8 7-14 15-14 7 0 11 4 11 10s-5 10-11 10c-7 0-9-6-15-6Z" fill="url(#variant-b)"/><circle cx="22" cy="56" r="7" fill="#dbee74"/><circle cx="58" cy="56" r="7" fill="url(#variant-a)"/></svg>`
+});
+document.querySelectorAll('.center-brand .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><style>
+/* Venue-logo evolution: direct descendants of the supplied signs, with no tile, badge or background. */
+#home>.header .header-logo-rail,#home>.header .header-center-logo,#home>.header .header-center-logo .logo-mark,
+#cards .center-brand,#cards .center-brand .logo-mark{background:transparent!important;border:0!important;box-shadow:none!important}
+</style><script>
+Object.assign(venueSvgMarks,{
+  /* Imagination Station / CurioCITY Central: the original gear train, reduced but retained. */
+  imagination:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="#e69a59"><path d="m10 40 4-2-1-5 5-2 2-5 5 2 4-3 4 4 5-1 2 5 5 2-2 5 3 4-4 4 1 5-5 2-2 5-5-2-4 3-4-4-5 1-2-5-5-2 2-5z"/><path d="m37 23 3-2-1-4 4-1 2-4 4 2 3-2 3 3 4-1 1 4 4 2-2 4 2 3-3 3 1 4-4 1-2 4-4-2-3 2-3-3-4 1-1-4-4-2 2-4z" fill="#e97959"/><path d="m40 48 2-2v-4l4-1 1-4 4 1 3-2 3 3 4-1 1 4 4 1-1 4 2 3-3 3 1 4-4 1-1 4-4-1-3 2-3-3-4 1-1-4-4-1z" fill="#d5b466"/></g><circle cx="27" cy="41" r="7" fill="#314257"/><circle cx="50" cy="23" r="5" fill="#314257"/><circle cx="54" cy="50" r="5" fill="#314257"/><path d="M24 41h6m17-21h6m-2 27h6" stroke="#fff4dc" stroke-width="2.6" stroke-linecap="round"/></svg>`,
+  /* Center of Play: palms, three blocks and the diamond baseline from the real crest. */
+  play:`<svg viewBox="0 0 72 72" aria-hidden="true"><g fill="#603f32"><path d="M8 61h56v3H8zM13 58V22h4v36zm42 0V22h4v36z"/><rect x="23" y="42" width="12" height="16" rx="1.8"/><rect x="37" y="31" width="12" height="27" rx="1.8"/></g><g fill="#c89c52"><path d="M6 25 15 15l9 10-9-4zM48 25l9-10 9 10-9-4z"/><path d="M15 34 7 29l8 1 8-1zM57 34l-8-5 8 1 8-1z"/><path d="m30 64 3-3 3 3-3 3zm7 0 3-3 3 3-3 3z"/><rect x="27" y="46" width="4" height="5" rx="1"/><rect x="41" y="36" width="4" height="5" rx="1"/></g></svg>`,
+  /* Sandbox: the original sign's heavy roof + four orange window figures. */
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M12 27h48v35a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4Z" fill="#242321"/><path d="M17 16h38l7 14H10z" fill="#242321"/><path d="M15 24h42v8H15z" fill="#242321"/><g fill="#f47d5f"><circle cx="26" cy="45" r="7"/><path d="m46 36 9 16H37z"/><rect x="20" y="55" width="14" height="7" rx="2.5"/><path d="M42 62v-8a7 7 0 0 1 14 0v8Z"/></g></svg>`,
+  /* Satisfactory: retain the actual nine-part molecular constellation, simply softened. */
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="logo-satis-cool" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#54d8e6"/><stop offset="1" stop-color="#7d61ed"/></linearGradient><linearGradient id="logo-satis-warm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#aced67"/><stop offset="1" stop-color="#f07791"/></linearGradient></defs><circle cx="16" cy="17" r="7" fill="url(#logo-satis-cool)"/><circle cx="55" cy="17" r="7" fill="#8865e6"/><path d="M15 43c0-9 8-16 17-16 8 0 14 6 14 13 0 6-5 11-11 11-8 0-11-7-18-7z" fill="url(#logo-satis-warm)"/><circle cx="34" cy="51" r="7" fill="#d9ef71"/><path d="M35 57c0-8 7-15 15-15 8 0 12 5 12 11s-5 10-11 10c-7 0-10-6-16-6z" fill="url(#logo-satis-warm)"/><circle cx="57" cy="57" r="7" fill="url(#logo-satis-cool)"/></svg>`
+});
+document.querySelectorAll('.center-brand .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><script>
+Object.assign(venueSvgMarks,{
+  /* Sandbox: a softer construction-house silhouette with the original four coral play shapes. */
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M14 27 23 15h26l9 12v30a7 7 0 0 1-7 7H21a7 7 0 0 1-7-7Z" fill="#292724"/><path d="M17 25h38v9H17z" fill="#292724"/><path d="M21 25h7v9h-7zm12 0h7v9h-7zm12 0h7v9h-7z" fill="#f47f61"/><g fill="#f47f61"><circle cx="26" cy="47" r="7"/><path d="m46 38 9 16H37z"/><rect x="20" y="56" width="14" height="7" rx="3"/><path d="M43 63v-8a7 7 0 0 1 14 0v8Z"/></g></svg>`,
+  /* Satisfactory: the actual icon language — three top dots, two floating soft links, coloured lower dots. */
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="satis-true-green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#55e8d5"/><stop offset=".58" stop-color="#9cf364"/><stop offset="1" stop-color="#62d8ff"/></linearGradient><linearGradient id="satis-true-warm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9ef64"/><stop offset=".56" stop-color="#ff9165"/><stop offset="1" stop-color="#e95cca"/></linearGradient></defs><circle cx="17" cy="16" r="7.5" fill="#62dced"/><circle cx="36" cy="15" r="7.5" fill="#69ed91"/><circle cx="55" cy="16" r="7.5" fill="#805fed"/><path d="M16 30c0-5 4-9 9-9 6 0 10 4 10 10 0 6-4 10-10 10-5 0-9 4-9 9 0 5-4 9-9 9s-9-4-9-9c0-12 8-20 18-20Z" transform="translate(10 0)" fill="url(#satis-true-green)"/><circle cx="36" cy="43" r="7.5" fill="#fff8eb"/><path d="M52 39c5 0 9 4 9 9 0 5 4 9 9 9v7c-10 0-18-8-18-18 0-3-2-5-5-5-4 0-7-3-7-7 0-4 3-7 7-7 3 0 5 2 5 5 0 4 0 7 0 7Z" fill="url(#satis-true-warm)"/><circle cx="17" cy="57" r="7.5" fill="#e6ef65"/><circle cx="56" cy="57" r="7.5" fill="#ff7b93"/></svg>`
+});
+document.querySelectorAll('.center-brand.sandbox .logo-mark,.center-brand.satisfactory .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><script>
+Object.assign(venueSvgMarks,{
+  /* Sandbox — sharp, architectural and almost identical in language to the original sign. */
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M11 28h50v36H11zM18 15h36l8 13H10z" fill="#191919"/><path d="M15 23h42v9H15z" fill="#191919"/><path d="M20 23h8v9h-8zm13 0h8v9h-8zm13 0h8v9h-8z" fill="#ff7757"/><circle cx="26" cy="46" r="7" fill="#ff7757"/><path d="m47 37 9 17H38z" fill="#ff7757"/><path d="M19 55h16v8H19z" fill="#ff7757"/><path d="M42 63V54a7 7 0 0 1 14 0v9z" fill="#ff7757"/></svg>`,
+  /* Satisfactory — original molecular layout with crisp separated cells and saturated neon gradients. */
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="sharp-satis-a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#44e5e6"/><stop offset=".5" stop-color="#65e983"/><stop offset="1" stop-color="#7864ff"/></linearGradient><linearGradient id="sharp-satis-b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ddf35e"/><stop offset=".5" stop-color="#ffb44f"/><stop offset="1" stop-color="#ef59c9"/></linearGradient></defs><circle cx="16" cy="15" r="7" fill="url(#sharp-satis-a)"/><circle cx="36" cy="15" r="7" fill="#6eea7f"/><circle cx="56" cy="15" r="7" fill="#805cf2"/><path d="M17 26c8 0 15 7 15 15v3c0 4-3 7-7 7s-7-3-7-7v-3c0-4-3-7-7-7s-7-3-7-7 3-7 7-7Z" transform="translate(9 0)" fill="url(#sharp-satis-a)"/><circle cx="36" cy="42" r="7" fill="#faf9f0"/><path d="M48 40c4 0 7 3 7 7v3c0 4 3 7 7 7s7 3 7 7H55c-8 0-14-6-14-14v-3c0-4 3-7 7-7Z" fill="url(#sharp-satis-b)"/><circle cx="16" cy="57" r="7" fill="#dff15c"/><circle cx="56" cy="57" r="7" fill="#ff766b"/></svg>`
+});
+document.querySelectorAll('.center-brand.sandbox .logo-mark,.center-brand.satisfactory .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><style>
+/* Brand fields belong only on the center cards. The main navigation marks remain bare. */
+#cards .center-brand.real-venue-mark{display:grid!important;place-items:center;background:rgba(255,253,249,.88)!important;padding:8px!important;border:1px solid rgba(255,255,255,.86)!important;border-radius:15px!important;box-shadow:0 10px 24px rgba(22,28,31,.18)!important;-webkit-backdrop-filter:blur(12px)!important;backdrop-filter:blur(12px)!important}
+#cards .center-brand.real-venue-mark .logo-mark{width:48px!important;height:48px!important;flex-basis:48px!important}
+#cards .center-brand.sandbox{background:rgba(255,244,237,.92)!important}
+#cards .center-brand.satisfactory{background:rgba(19,20,24,.88)!important;border-color:rgba(255,255,255,.2)!important}
+#home>.header .header-logo-rail,#home>.header .header-center-logo,#home>.header .header-center-logo .logo-mark{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+</style><script>
+Object.assign(venueSvgMarks,{
+  /* Sandbox: the sign's iconic dark workshop façade and its four coral geometry cut-outs. */
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M11 13h50v16H11z" fill="#20201f"/><path d="M15 25h42v39H15z" fill="#20201f"/><path d="M18 13h9v10h-9zm14 0h9v10h-9zm14 0h8v10h-8z" fill="#f47b5d"/><circle cx="27" cy="43" r="7" fill="#f47b5d"/><path d="m47 34 9 16H38z" fill="#f47b5d"/><rect x="20" y="54" width="15" height="8" rx="1.5" fill="#f47b5d"/><path d="M42 62V53a7 7 0 0 1 14 0v9z" fill="#f47b5d"/></svg>`,
+  /* Satisfactory: three top orbs, the white centre orb, two original free-flowing molecule links, four lower colour notes. */
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="real-satis-green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4fe0ec"/><stop offset=".45" stop-color="#81ef77"/><stop offset="1" stop-color="#c2f161"/></linearGradient><linearGradient id="real-satis-warm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d3ef63"/><stop offset=".5" stop-color="#ff9860"/><stop offset="1" stop-color="#e45bd4"/></linearGradient></defs><circle cx="15" cy="14" r="6.5" fill="#65dded"/><circle cx="35" cy="14" r="6.5" fill="#6eec85"/><circle cx="55" cy="14" r="6.5" fill="#8660ed"/><path d="M12 28c0-5 4-9 9-9 6 0 10 4 10 9 0 6-4 10-10 10-5 0-8 3-8 8 0 5-4 9-9 9-5 0-9-4-9-9 0-11 7-18 17-18Z" transform="translate(11 0)" fill="url(#real-satis-green)"/><circle cx="36" cy="39" r="7" fill="#fffdf5"/><path d="M50 39c5 0 9 4 9 9 0 5 4 8 9 8v8c-11 0-19-8-19-19 0-3-2-5-5-5-4 0-7-3-7-7s3-7 7-7c4 0 7 3 7 7v6Z" fill="url(#real-satis-warm)"/><circle cx="15" cy="57" r="6.5" fill="#d9ed64"/><circle cx="56" cy="57" r="6.5" fill="#ff767c"/></svg>`
+});
+document.querySelectorAll('.center-brand.sandbox .logo-mark,.center-brand.satisfactory .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><script>
+Object.assign(venueSvgMarks,{
+  /* Sandbox — faithful to the original construction-board mark. */
+  sandbox:`<svg viewBox="0 0 72 72" aria-hidden="true"><!-- Faithful construction-board composition: tape is above, then a clear two-row grid. --><rect x="16" y="22" width="40" height="42" rx="1.2" fill="#1e2532"/><rect x="12" y="12" width="48" height="11" rx="1.2" fill="#1e2532"/><path d="M18 13h35v9H18z" fill="#efaa38"/><path d="m20 21 9-8h5l-9 8zm13 0 9-8h5l-9 8zm13 0 7-7v7z" fill="#fff8e7"/><circle cx="27" cy="35" r="6" fill="#efaa38"/><path d="M47 27 54 42H40z" fill="#efaa38"/><rect x="21" y="49" width="12" height="11" rx=".6" fill="#efaa38"/><path d="M41 60V50a6 6 0 0 1 12 0v10z" fill="#efaa38"/></svg>`,
+  /* Satisfactory — exact original constellation: two double-drop forms and six independent colour cells. */
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="satis-cool-link" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#53e4e3"/><stop offset=".55" stop-color="#5cea8d"/><stop offset="1" stop-color="#7b6cf5"/></linearGradient><linearGradient id="satis-warm-link" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9ed66"/><stop offset=".52" stop-color="#ff9560"/><stop offset="1" stop-color="#e85dd0"/></linearGradient></defs><circle cx="13" cy="14" r="6.5" fill="#65ddec"/><circle cx="59" cy="16" r="6.5" fill="#825ff0"/><line x1="34" y1="19" x2="18" y2="40" stroke="url(#satis-cool-link)" stroke-width="13" stroke-linecap="round"/><circle cx="35" cy="39" r="6.5" fill="#c9eb71"/><line x1="48" y1="41" x2="34" y2="57" stroke="url(#satis-warm-link)" stroke-width="13" stroke-linecap="round"/><circle cx="13" cy="58" r="6.5" fill="#ddef69"/><circle cx="59" cy="58" r="6.5" fill="#ff786f"/></svg>`
+});
+document.querySelectorAll('.center-brand.sandbox .logo-mark,.center-brand.satisfactory .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><script>
+/* Satisfactory: faithful original sign language — no outer / Instagram-style ring. */
+Object.assign(venueSvgMarks,{
+  satisfactory:`<svg viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="satis-green-final" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4ee893"/><stop offset=".52" stop-color="#62e6d6"/><stop offset="1" stop-color="#7baeff"/></linearGradient><linearGradient id="satis-pink-final" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8262f0"/><stop offset=".5" stop-color="#d264e9"/><stop offset="1" stop-color="#fb666d"/></linearGradient><linearGradient id="satis-yellow-final" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dff164"/><stop offset=".52" stop-color="#ffb440"/><stop offset="1" stop-color="#ff7165"/></linearGradient></defs><circle cx="15" cy="16" r="7" fill="#55e777"/><circle cx="36" cy="15" r="7" fill="#59dced"/><circle cx="57" cy="16" r="7" fill="#5d75f3"/><path d="M37 25c-5 0-9 4-9 9 0 5-4 9-9 9-5 0-9 4-9 9s4 9 9 9 9-4 9-9c0-5 4-9 9-9s9-4 9-9-4-9-9-9Z" fill="url(#satis-green-final)"/><circle cx="36" cy="43" r="7" fill="#fffdf7"/><path d="M52 38c-5 0-9 4-9 9s-4 9-9 9-9 4-9 9 4 9 9 9 9-4 9-9 4-9 9-9 9-4 9-9-4-9-9-9Z" fill="url(#satis-pink-final)"/><circle cx="15" cy="61" r="7" fill="url(#satis-yellow-final)"/><circle cx="57" cy="61" r="7" fill="#ef38c7"/></svg>`
+});
+document.querySelectorAll('.center-brand.satisfactory .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><style>
+/* Satisfactory uses its original supplied mark in the one existing logo slot only. */
+#home .header-center-logo.satisfactory .logo-mark,
+#cards .center-brand.satisfactory .logo-mark{background:transparent!important}
+#home .header-center-logo.satisfactory .logo-mark img,
+#cards .center-brand.satisfactory .logo-mark img{
+  display:block!important;width:100%!important;height:100%!important;
+  object-fit:contain!important;object-position:center!important;
+}
+</style><script>
+Object.assign(venueSvgMarks,{
+  satisfactory:'<img src="assets/brand-satisfactory-v1.png" alt="Satisfactory logo">'
+});
+document.querySelectorAll('.center-brand.satisfactory .logo-mark').forEach(mark=>delete mark.dataset.nativeVenue);
+applyNativeVenueMarks();
+</script><style>
+/* Clean full-width transition: no inset frame, side seam or nested rounded panel. */
+#home .hero{border-radius:0!important}
+#centers.section{margin-top:0!important;border-radius:0!important;box-shadow:none!important}
+</style><style>
+/* Editorial scroll motion — deliberately quiet, with no jumpy or distracting effects. */
+@media (prefers-reduced-motion:no-preference){
+  .scroll-reveal{opacity:0;transform:translate3d(0,30px,0) scale(.985);filter:blur(5px);transition:opacity .72s cubic-bezier(.2,.8,.2,1),transform .72s cubic-bezier(.2,.8,.2,1),filter .58s ease;transition-delay:var(--reveal-delay,0ms);will-change:transform,opacity,filter}
+  .scroll-reveal.revealed{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}
+  #cards .card.scroll-reveal{transform:translate3d(0,42px,0) scale(.96)}
+  #cards .card.scroll-reveal.revealed{transform:translate3d(0,0,0) scale(1)}
+  #cards .card.scroll-reveal.revealed .photo img{animation:photo-settle 1.15s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--reveal-delay,0ms)}
+  .proof-grid article.scroll-reveal{transform:translate3d(0,22px,0) scale(.98)}
+  .compact-brief.scroll-reveal{transform:translate3d(0,22px,0) scale(.99)}
+  @keyframes photo-settle{from{transform:scale(1.09);filter:saturate(.86)}to{transform:scale(1);filter:saturate(1)}}
+}
+@media (prefers-reduced-motion:reduce){.scroll-reveal{opacity:1!important;transform:none!important;filter:none!important}}
+</style><script>
+/* Elements receive motion only when they enter the viewport; dynamic page changes are handled too. */
+let curioScrollObserver;
+function setCurioScrollMotion(){
+  if(!('IntersectionObserver' in window))return;
+  if(curioScrollObserver)curioScrollObserver.disconnect();
+  const nodes=[
+    ...document.querySelectorAll('#centers .head,#cards .card,.compact-brief,#why-us .head,#why-us .proof-grid article,.story,.cta,.footer > div')
+  ];
+  nodes.forEach((node,index)=>{
+    if(node.dataset.motionReady)return;
+    node.dataset.motionReady='true';
+    node.classList.add('scroll-reveal');
+    node.style.setProperty('--reveal-delay',`${Math.min(index % 6,4)*72}ms`);
+  });
+  curioScrollObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('revealed');curioScrollObserver.unobserve(entry.target)}
+    });
+  },{threshold:.14,rootMargin:'0px 0px -6%'});
+  document.querySelectorAll('.scroll-reveal:not(.revealed)').forEach(node=>curioScrollObserver.observe(node));
+}
+setCurioScrollMotion();
+addEventListener('hashchange',()=>setTimeout(setCurioScrollMotion,80));
+</script><style>
+/* Two actions stay compact; the telephone route now clearly shows the booking number. */
+.compact-actions .phone-booking{display:grid;gap:2px;line-height:1.05;text-align:center}
+.compact-actions .phone-booking small{font:800 11px/1 'Nunito Sans',sans-serif;opacity:.78;letter-spacing:.15px}
+</style><script>
+function showCurioBookingPhone(){
+  const id=location.hash.split('/')[1];
+  if(!id)return;
+  const number=id==='satisfactory'?'+974 5123 5393':'+974 7723 3233';
+  const phoneButton=document.querySelector('#detail .compact-actions a[href^="tel:"]');
+  if(!phoneButton)return;
+  phoneButton.classList.add('phone-booking');
+  phoneButton.innerHTML=`<span>Book by phone</span><small>${number}</small>`;
+}
+showCurioBookingPhone();
+addEventListener('hashchange',()=>setTimeout(showCurioBookingPhone,100));
+</script><style>
+/* Selected brand mark: option 03 “Curious Loop”, used on the homepage only. */
+#home>.header .brand .star{
+  position:relative;display:block;width:36px;height:36px;flex:0 0 36px;font-size:0;color:transparent;
+  transform:rotate(-24deg);
+  background:radial-gradient(circle at 12% 12%,#59e1ea 0 4px,transparent 4.5px),radial-gradient(circle at 88% 12%,#825ef1 0 4.5px,transparent 5px),radial-gradient(circle at 52% 52%,#fffdf9 0 4px,transparent 4.5px),radial-gradient(circle at 88% 88%,#ff7866 0 4.5px,transparent 5px);
+}
+#home>.header .brand .star:before,#home>.header .brand .star:after{content:'';position:absolute;width:14px;height:25px;border-radius:999px;transform:rotate(45deg);box-shadow:0 3px 7px rgba(25,34,37,.12)}
+#home>.header .brand .star:before{left:6px;top:6px;background:linear-gradient(155deg,#59e9d7,#8be869 54%,#f2ec67)}
+#home>.header .brand .star:after{right:6px;bottom:6px;background:linear-gradient(155deg,#c36eff,#f361b5 55%,#ff8066)}
+@media(max-width:950px){#home>.header .brand .star{width:29px;height:29px;flex-basis:29px;transform:rotate(-24deg) scale(.82);transform-origin:left center}}
+</style><style>
+/* Literal scaled copy of option 03 — nothing added, nothing removed. */
+#home>.header .brand .star{width:46px!important;height:46px!important;flex-basis:46px!important;transform:rotate(-24deg)!important;background:none!important}
+#home>.header .brand .star:before,#home>.header .brand .star:after{width:18px!important;height:31px!important;transform:rotate(45deg)!important}
+#home>.header .brand .star:before{left:7px!important;top:7px!important;background:linear-gradient(155deg,#59e9d7,#8be869 54%,#f2ec67)!important}
+#home>.header .brand .star:after{right:7px!important;bottom:7px!important;background:linear-gradient(155deg,#c36eff,#f361b5 55%,#ff8066)!important}
+#home>.header .brand .star i{position:absolute;display:block;border-radius:50%;z-index:2;box-shadow:0 3px 7px rgba(25,34,37,.12)}
+#home>.header .brand .star i:nth-child(1){width:7px;height:7px;left:6px;top:6px;background:#59e1ea}
+#home>.header .brand .star i:nth-child(2){width:7px;height:7px;right:6px;bottom:6px;background:#ff7866}
+#home>.header .brand .star i:nth-child(3){width:7px;height:7px;left:20px;top:20px;background:#fffdf9}
+@media(max-width:950px){#home>.header .brand .star{width:37px!important;height:37px!important;flex-basis:37px!important;transform:rotate(-24deg) scale(.82)!important;transform-origin:left center!important}}
+</style><script>
+document.querySelector('#home>.header .brand .star').innerHTML='<i></i><i></i><i></i>';
+</script><style>
+/* Brand refinement: a calm leaf-green CITY balances the multicolour Curio mark. */
+.brand b{color:#2f9a73!important}
+
+/* Booking buttons: both lines sit as one centered, deliberate label at every desktop width. */
+.compact-actions{align-items:stretch}
+.compact-actions .button{
+  min-height:82px;
+  align-items:center;
+  text-align:center;
+  line-height:1.08;
+}
+.compact-actions .phone-booking{
+  grid-template-rows:auto auto;
+  justify-items:center;
+  align-content:center;
+  gap:5px;
+}
+.compact-actions .phone-booking small{
+  display:block;
+  line-height:1.05;
+  white-space:nowrap;
+}
+@media(max-width:650px){
+  .compact-actions .button{min-height:70px}
+}
+</style><script>
+/* Share card and browser icon are ready for the future public URL. */
+[
+  ['link','rel','icon','assets/curiocity-favicon.svg'],
+  ['meta','name','theme-color','#2f9a73'],
+  ['meta','name','description','Four distinctive worlds of family play across Doha.'],
+  ['meta','property','og:title','CurioCITY Group'],
+  ['meta','property','og:description','Four distinctive worlds of family play across Doha.'],
+  ['meta','property','og:image','assets/curiocity-social-card-v1.png'],
+  ['meta','property','og:type','website']
+].forEach(([tag,key,value,content])=>{
+  if(document.head.querySelector(`${tag}[${key}="${value}"]`))return;
+  const element=document.createElement(tag);element.setAttribute(key,value);
+  if(tag==='link'){element.setAttribute('href',content);element.setAttribute('type','image/svg+xml')}
+  else element.setAttribute('content',content);
+  document.head.appendChild(element);
+});
+</script><script>
+/* Each centre page gives a direct, visible route to its exact Google Maps search. */
+function addCurioGoogleMapsLink(){
+  const id=location.hash.split('/')[1];
+  const centre=centers.find(item=>item.id===id);
+  const info=document.querySelector('#detail .detail-info');
+  if(!centre||!info||info.querySelector('.google-maps-link'))return;
+  const link=document.createElement('a');
+  link.className='google-maps-link';
+  link.target='_blank';
+  link.rel='noopener';
+  link.href=map(centre.address);
+  link.textContent='Open in Google Maps ↗';
+  info.appendChild(link);
+}
+addCurioGoogleMapsLink();
+addEventListener('hashchange',()=>setTimeout(addCurioGoogleMapsLink,120));
+</script><style>
+.detail-info .google-maps-link{display:inline-flex;width:max-content;margin-top:5px;color:var(--teal);font-weight:900}
+.detail-info .google-maps-link:hover{text-decoration:underline;text-underline-offset:3px}
+</style><script>
+/* A centre is a fresh screen: never inherit the scroll position from the previous view. */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+function resetCentreScroll(){
+  if (!location.hash.startsWith('#center/')) return;
+  const top = () => window.scrollTo({top:0,left:0,behavior:'auto'});
+  top();
+  requestAnimationFrame(top);
+  setTimeout(top, 80);
+}
+resetCentreScroll();
+addEventListener('hashchange', resetCentreScroll);
+</script></body></html>
