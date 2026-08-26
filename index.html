@@ -907,4 +907,35 @@ function resetCentreScroll(){
 }
 resetCentreScroll();
 addEventListener('hashchange', resetCentreScroll);
+</script><style>
+/* Restart the Home entrance cleanly after hash navigation (especially mobile Safari). */
+@media (prefers-reduced-motion:no-preference){
+  #home>.header .brand,#home>.header .nav,#home .hero .eyebrow,#home .hero h1,#home .hero p:not(.eyebrow),#home .hero .buttons{
+    opacity:1!important;transform:none!important;filter:none!important;animation:none!important;
+  }
+  #home.home-entering>.header .brand,#home.home-entering>.header .nav,#home.home-entering .hero .eyebrow,#home.home-entering .hero h1,#home.home-entering .hero p:not(.eyebrow),#home.home-entering .hero .buttons{
+    opacity:0!important;animation:home-enter .72s cubic-bezier(.2,.8,.2,1) forwards!important;
+  }
+  #home.home-entering>.header .brand{animation-delay:.08s!important}
+  #home.home-entering>.header .nav{animation-delay:.16s!important}
+  #home.home-entering .hero .eyebrow{animation-delay:.34s!important}
+  #home.home-entering .hero h1{animation-delay:.46s!important}
+  #home.home-entering .hero p:not(.eyebrow){animation-delay:.60s!important}
+  #home.home-entering .hero .buttons{animation-delay:.76s!important}
+}
+</style><script>
+/* Replays the first-screen reveal on every genuine return to Home, even after rapid taps. */
+let curioHomeEntranceTimer;
+function replayCurioHomeEntrance(){
+  const home=document.querySelector('#home');
+  if(!home||location.hash.startsWith('#center/')||location.hash==='#centers')return;
+  clearTimeout(curioHomeEntranceTimer);
+  home.classList.remove('home-entering');
+  void home.offsetWidth;
+  home.classList.add('home-entering');
+  curioHomeEntranceTimer=setTimeout(()=>home.classList.remove('home-entering'),1650);
+}
+replayCurioHomeEntrance();
+addEventListener('hashchange',()=>setTimeout(replayCurioHomeEntrance,120));
+addEventListener('pageshow',replayCurioHomeEntrance);
 </script></body></html>
